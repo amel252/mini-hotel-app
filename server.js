@@ -1,6 +1,8 @@
 import express from "express";
+import dotenv from "dotenv";
+dotenv.config();
 
-const PORT = 3400;
+const PORT = process.env.PORT || 3200;
 //instancié express
 const app = express();
 
@@ -9,5 +11,5 @@ const app = express();
 // });
 
 app.listen(PORT, () => {
-    console.log(`Le server est lacé sur le port : ${PORT}`);
+    console.log(`Le server est lancé sur le port : ${PORT}`);
 });
