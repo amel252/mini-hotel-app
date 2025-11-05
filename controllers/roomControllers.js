@@ -17,10 +17,16 @@ export const addRoom = async (req, res) => {
     // Si ok on renvoie la chambre enregistrée au client
     res.send(room);
 };
-// *****read room****
+// *****read all rooms****
 export const getRooms = async (req, res) => {
     // aller chercher tout mes rooms
     const rooms = await RoomModel.find({});
     // envoyé la réponse
     res.send(rooms);
+};
+
+// **** read room by id**
+export const getRoomById = async (req, res) => {
+    const room = await RoomModel.findById(req.params.id);
+    res.send(room);
 };
