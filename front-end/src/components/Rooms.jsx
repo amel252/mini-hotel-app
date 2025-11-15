@@ -10,11 +10,20 @@ const Rooms = () => {
             const data = await window.fetch("/api/rooms");
             //  quand je récup mes données je converti en json
             const json = await data.json();
-            console.log(json);
+            // console.log(json);
         };
         fetchData();
     }, []);
 
-    return <div>Rooms en outlet </div>;
+    return (
+        <div>
+            <h2>Rooms</h2>
+            <ul>
+                {rooms.map((room) => (
+                    <li key={room.id}>{room.name}</li>
+                ))}
+            </ul>
+        </div>
+    );
 };
 export default Rooms;

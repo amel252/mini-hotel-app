@@ -1,24 +1,33 @@
 import mongoose from "mongoose";
 
-const RoomSchema = new mongoose.Schema({
-    name: {
-        type: String,
-        required: true,
-        // permet de supp les espace en plus en fin de mot
-        trim: true,
-        lowercase: true,
-    },
-    maxPersons: {
-        type: Number,
-        default: 1,
-        validate: (value) => {
-            if (value <= 0) {
-                throw new Error(
-                    "la chambre doit pouvoir acceuillir au moins une personne"
-                );
-            }
+const roomSchema = new mongoose.Schema(
+    {
+        name: {
+            type: String,
+            required: true,
+        },
+        description: {
+            type: String,
+            required: true,
+        },
+        photo: {
+            type: String,
+            required: true,
+        },
+        maxPersons: {
+            type: Number,
+            required: true,
+        },
+        price: {
+            type: Number,
+            required: true,
         },
     },
-});
-const Room = mongoose.model("Room", RoomSchema);
+    {
+        timestamps: true, // crée createdAt et updatedAt automatiquement
+    }
+);
+
+const Room = mongoose.model("Room", roomSchema);
+
 export default Room;
