@@ -1,4 +1,6 @@
 import React, { useEffect, useState } from "react";
+import RoomCardDetail from "./RoomCardDetail";
+import { Link } from "react-router-dom";
 
 const Rooms = () => {
     const [rooms, setRooms] = useState([]);
@@ -11,19 +13,27 @@ const Rooms = () => {
             const data = await window.fetch("/api/rooms");
             //  quand je récup mes données & je converti en json
             const json = await data.json();
-            console.log(json);
+
+            setRooms(json);
         };
         fetchData();
     }, []);
 
     return (
-        <div>
-            Rooms of my hotel
-            {/* <ul>
-                {rooms.map((room) => (
-                    <li key={room.id}>{room.name}</li>
-                ))}
-            </ul> */}
+        // permet d'afficher la liste des chambres
+        <div
+            style={{
+                display: "flex",
+                flexWrap: "wrap", // permet de passer à la ligne si beaucoup de cartes
+                gap: "20px", // espace entre les cartes
+                justifyContent: "center", // centre la ligne
+            }}
+        >
+            {rooms.map((room) => (
+                <Link to={room._id} key={room._id}>
+                    <RoomCardDetail room={room} />
+                </Link>
+            ))}
         </div>
     );
 };
