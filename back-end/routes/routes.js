@@ -1,7 +1,5 @@
 import express from "express";
 import {
-    getTest,
-    postTest,
     addRoom,
     getRooms,
     getRoomById,
@@ -11,9 +9,6 @@ import {
 import { catchErrors } from "../helpers.js";
 
 const router = express.Router();
-
-router.get("/", getTest);
-router.post("/test", postTest);
 
 router.post("/api/rooms", addRoom); // Créer une chambre
 router.get("/api/rooms", catchErrors(getRooms)); // obtenir toute les chambres

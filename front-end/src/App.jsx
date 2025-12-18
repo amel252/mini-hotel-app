@@ -7,7 +7,7 @@ import Services from "./pages/Services";
 import Contact from "./pages/Contact";
 import RoomsPage from "./pages/RoomsPage";
 import Rooms from "./components/Rooms";
-import RoomCardDetail from "./components/RoomCardDetail";
+import SingleRoom from "./components/SingleRoom";
 
 const App = () => {
     return (
@@ -15,9 +15,11 @@ const App = () => {
             <Layout>
                 <Routes>
                     <Route path="/" element={<Home />} />
+                    {/* Route principale pour la liste des chambres */}
                     <Route path="/rooms" element={<RoomsPage />}>
                         <Route index element={<Rooms />} />
-                        <Route path=":id" element={<RoomCardDetail />} />
+                        {/* Route pour la chambre unique avec l'id */}
+                        <Route path="/rooms/:id" element={<SingleRoom />} />
                     </Route>
                     <Route path="/about" element={<About />} />
                     <Route path="/services" element={<Services />} />

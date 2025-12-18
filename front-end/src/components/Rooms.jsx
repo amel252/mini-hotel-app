@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import RoomCardDetail from "./RoomCardDetail";
 import { Link } from "react-router-dom";
 
+//  component qui affiche une liste des chambre
 const Rooms = () => {
     const [rooms, setRooms] = useState([]);
     //  function quand je lance mon coposant , ca me récupere les données (mes chambres)
@@ -30,7 +31,7 @@ const Rooms = () => {
             }}
         >
             {rooms.map((room) => (
-                <Link to={room._id} key={room._id}>
+                <Link to={`/rooms/${room._id}`} key={room._id}>
                     <RoomCardDetail room={room} />
                 </Link>
             ))}

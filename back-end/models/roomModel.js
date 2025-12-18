@@ -10,9 +10,10 @@ const roomSchema = new mongoose.Schema(
             type: String,
             required: true,
         },
-        photo: {
-            type: String,
+        photos: {
+            type: [String],
             required: true,
+            default: [],
         },
         maxPersons: {
             type: Number,
@@ -20,6 +21,18 @@ const roomSchema = new mongoose.Schema(
         },
         price: {
             type: Number,
+            required: true,
+        },
+        adressCity: {
+            type: String,
+            required: true,
+        },
+        Advantages: {
+            type: String,
+            required: true,
+        },
+        breackfast: {
+            type: String,
             required: true,
         },
     },

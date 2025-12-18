@@ -1,13 +1,5 @@
 import RoomModel from "../models/roomModel.js";
 
-export const getTest = (req, res) => {
-    res.send("Hello les amis ");
-};
-
-export const postTest = (req, res) => {
-    res.send(req.body);
-};
-
 // ****create a room***
 export const addRoom = async (req, res) => {
     // On crée un nouvel objet room à partir du modèle RoomModel.
@@ -33,11 +25,14 @@ export const getRoomById = async (req, res) => {
 //  ****update room****
 export const updateRoom = async (req, res) => {
     //  chercher l'élement a modifier
-    const room = await RoomModel.findByIdAndUpdate(req.params.id, req.body);
-    //  enregistrer la recherche
-    await room.save();
-    //  envoyé la mise a jour au BD
-    res.send(room);
+    const room = await RoomModel.findByIdAndUpdate(req.params.id, req.body, {
+        new: true,
+        runValidators: true,
+    });
+    if (!room) {
+        return res.status(404).json({ message: "Room not found" });
+    }
+    res.status(200).json(room);
 };
 //  *** delete room **
 export const deleteRoom = async (req, res) => {
