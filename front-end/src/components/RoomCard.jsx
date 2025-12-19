@@ -3,7 +3,7 @@ import { Card, Badge } from "antd";
 const { Meta } = Card;
 
 // petite unité visuelle qui représente la structure de ma carte
-const RoomCardDetail = ({ room }) => {
+const RoomCard = ({ room }) => {
     if (!room) return null; // ou un message "Chargement..."
     return (
         <div style={{ width: 300, margin: "1rem" }}>
@@ -41,4 +41,4 @@ const RoomCardDetail = ({ room }) => {
     );
 };
 
-export default RoomCardDetail;
+export default RoomCard;

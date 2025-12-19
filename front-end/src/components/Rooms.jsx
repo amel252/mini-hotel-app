@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import RoomCardDetail from "./RoomCardDetail";
+import RoomCard from "./RoomCard";
 import { Link } from "react-router-dom";
 
 //  component qui affiche une liste des chambre
@@ -32,7 +32,7 @@ const Rooms = () => {
         >
             {rooms.map((room) => (
                 <Link to={`/rooms/${room._id}`} key={room._id}>
-                    <RoomCardDetail room={room} />
+                    <RoomCard room={room} />
                 </Link>
             ))}
         </div>

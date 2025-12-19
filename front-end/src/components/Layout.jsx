@@ -65,7 +65,7 @@ const MLLayout = ({ children }) => {
                         fontSize: "1.5rem",
                     }}
                 >
-                    Grandoria
+                    Grand Hotel
                 </Link>
 
                 {/* Liens affichés directement à droite */}
@@ -76,7 +76,7 @@ const MLLayout = ({ children }) => {
                     <Link to="/rooms" style={navLinkStyle}>
                         Rooms
                     </Link>
-                    <Link to="/aboutus" style={navLinkStyle}>
+                    <Link to="/about" style={navLinkStyle}>
                         About us
                     </Link>
                     <Link to="/services" style={navLinkStyle}>
@@ -103,7 +103,7 @@ const MLLayout = ({ children }) => {
                             textDecoration: "none",
                         }}
                     >
-                        Grandoria
+                        Grand Hotel
                     </a>
                     <div
                         className="footer-contact"

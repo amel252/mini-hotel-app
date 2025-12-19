@@ -19,7 +19,8 @@ const App = () => {
                     <Route path="/rooms" element={<RoomsPage />}>
                         <Route index element={<Rooms />} />
                         {/* Route pour la chambre unique avec l'id */}
-                        <Route path="/rooms/:id" element={<SingleRoom />} />
+                        <Route path=":id" element={<SingleRoom />} />{" "}
+                        {/* relatif à /rooms */}
                     </Route>
                     <Route path="/about" element={<About />} />
                     <Route path="/services" element={<Services />} />
