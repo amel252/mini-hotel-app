@@ -124,27 +124,57 @@ const MLLayout = ({ children }) => {
                     <h4>Useful Links</h4>
                     <ul style={{ listStyle: "none", padding: 0, margin: 0 }}>
                         <li>
-                            <Link to="/" style={{ color: "#fff" }}>
+                            <Link
+                                to="/"
+                                style={{
+                                    color: "#fff",
+                                    textDecoration: "none",
+                                }}
+                            >
                                 Home
                             </Link>
                         </li>
                         <li>
-                            <Link to="/about" style={{ color: "#fff" }}>
+                            <Link
+                                to="/about"
+                                style={{
+                                    color: "#fff",
+                                    textDecoration: "none",
+                                }}
+                            >
                                 About us
                             </Link>
                         </li>
                         <li>
-                            <Link to="/services" style={{ color: "#fff" }}>
+                            <Link
+                                to="/services"
+                                style={{
+                                    color: "#fff",
+                                    textDecoration: "none",
+                                }}
+                            >
                                 Services
                             </Link>
                         </li>
                         <li>
-                            <a href="#" style={{ color: "#fff" }}>
+                            <a
+                                href="#"
+                                style={{
+                                    color: "#fff",
+                                    textDecoration: "none",
+                                }}
+                            >
                                 Terms of service
                             </a>
                         </li>
                         <li>
-                            <a href="#" style={{ color: "#fff" }}>
+                            <a
+                                href="#"
+                                style={{
+                                    color: "#fff",
+                                    textDecoration: "none",
+                                }}
+                            >
                                 Privacy policy
                             </a>
                         </li>
@@ -170,7 +200,13 @@ const MLLayout = ({ children }) => {
                             }}
                         >
                             <FaFacebookF />
-                            <a href="#" style={{ color: "#fff" }}>
+                            <a
+                                href="#"
+                                style={{
+                                    color: "#fff",
+                                    textDecoration: "none",
+                                }}
+                            >
                                 Facebook
                             </a>
                         </li>
@@ -182,7 +218,13 @@ const MLLayout = ({ children }) => {
                             }}
                         >
                             <FaInstagram />
-                            <a href="#" style={{ color: "#fff" }}>
+                            <a
+                                href="#"
+                                style={{
+                                    color: "#fff",
+                                    textDecoration: "none",
+                                }}
+                            >
                                 Instagram
                             </a>
                         </li>
@@ -194,7 +236,13 @@ const MLLayout = ({ children }) => {
                             }}
                         >
                             <FaTiktok />
-                            <a href="#" style={{ color: "#fff" }}>
+                            <a
+                                href="#"
+                                style={{
+                                    color: "#fff",
+                                    textDecoration: "none",
+                                }}
+                            >
                                 Tiktok
                             </a>
                         </li>
@@ -206,7 +254,13 @@ const MLLayout = ({ children }) => {
                             }}
                         >
                             <FaTwitter />
-                            <a href="#" style={{ color: "#fff" }}>
+                            <a
+                                href="#"
+                                style={{
+                                    color: "#fff",
+                                    textDecoration: "none",
+                                }}
+                            >
                                 Twitter
                             </a>
                         </li>

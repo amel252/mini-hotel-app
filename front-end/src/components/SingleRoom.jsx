@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { useParams } from "react-router";
 import { Link } from "react-router-dom";
+import { Button } from "antd";
 
 const SingleRoom = () => {
     const { id } = useParams();
@@ -68,14 +69,25 @@ const SingleRoom = () => {
                         <strong>Price:</strong> ${room.price}
                     </p>
                     <p>
-                        <strong>Max persons:</strong> {room.maxPersons}
+                        <i className="bi bi-people">
+                            <span> Max persons :{room.maxPersons}</span>
+                        </i>
                     </p>
-                    <Link
-                        to="/booking"
-                        className="btn btn-outline-danger fw-bold mt-3"
-                        style={{ width: "150px" }}
-                    >
-                        Book this room
+
+                    <Link to="/booking">
+                        <Button
+                            style={{
+                                // width: "8rem",
+                                height: "3rem",
+                                color: "#fff",
+                                background: "#42675a",
+                                marginTop: "10px",
+                            }}
+                        >
+                            Book Now
+                        </Button>
+                        {/* className="btn btn-outline-danger fw-bold mt-3" style=
+                        {{ width: "150px" }} */}
                     </Link>
                 </div>
             </div>
@@ -104,14 +116,7 @@ const SingleRoom = () => {
                 )}
             </div>
             {/* Amenities / Avantages */}
-            <div
-                style={{
-                    border: "solid",
-                    borderRadius: "5px",
-                    // marginBottom: "45px",
-                }}
-                className="room-amenities mb-8"
-            >
+            <div className="room-amenities mb-8">
                 <h3
                     style={{ marginLeft: "30px" }}
                     className="section-subtitle mb-4"
@@ -121,10 +126,12 @@ const SingleRoom = () => {
                 <div
                     style={{
                         display: "flex", // active le mode flex
-                        gap: "25px", // espace entre les colonnes
+                        gap: "65px", // espace entre les colonnes
                         flexWrap: "wrap", // permet de passer à la ligne sur petit écran
                         overflowX: "auto", // scroll horizontal si écran trop petit
                         fontSize: "1rem",
+                        justifyContent: "center",
+                        alignItems: "center",
                     }}
                 >
                     {/* Sleeping */}
@@ -220,7 +227,7 @@ const SingleRoom = () => {
                         </div>
                         <div className="col-lg-4 text-center text-lg-end">
                             <div className="price-display mb-2">
-                                <span className="price">${room.price}</span>
+                                <span className="price">{room.price}$</span>
                                 <span className="period"> per night</span>
                             </div>
                             <Link
