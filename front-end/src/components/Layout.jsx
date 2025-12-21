@@ -85,6 +85,9 @@ const MLLayout = ({ children }) => {
                     <Link to="/contact" style={navLinkStyle}>
                         Contact
                     </Link>
+                    <Link to="/dashboard" style={navLinkStyle}>
+                        Dashboard
+                    </Link>
                 </div>
             </Header>
 

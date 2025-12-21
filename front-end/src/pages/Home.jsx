@@ -69,6 +69,7 @@ export default function Home() {
                                             <span>24/7 Room Service</span>
                                         </div>
                                     </div>
+                                    {/*  partie button */}
                                     <div
                                         style={{ marginTop: "10px" }}
                                         className="hero-buttons"
@@ -99,9 +100,8 @@ export default function Home() {
                                     className="hero-images"
                                     style={{
                                         backgroundSize: "cover",
-                                        // objectFit: "cover",
-                                        // width: "850px",
-                                        height: "550px",
+                                        objectFit: "cover",
+                                        height: "100%",
                                     }}
                                 >
                                     <div className="main-image">
