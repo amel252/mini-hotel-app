@@ -1,3 +1,4 @@
+// La gestion complète (CRUD) se fait dans /admin/rooms
 import React, { useEffect, useState } from "react";
 import { Table, Button, message, Spin } from "antd";
 import { Link, useNavigate } from "react-router-dom";
@@ -65,7 +66,7 @@ const AdminRooms = () => {
             key: "actions",
             render: (_, record) => (
                 <div style={{ display: "flex", gap: "0.5rem" }}>
-                    <Link to={`/admin/rooms/edit/${record._id}`}>
+                    <Link to={`/admin/rooms/${record._id}/edit/`}>
                         <Button type="primary">Edit</Button>
                     </Link>
                     <Button
@@ -91,7 +92,14 @@ const AdminRooms = () => {
             >
                 Add New Room
             </Button>
-            <Table dataSource={rooms} columns={columns} rowKey="_id" />
+
+            <Table
+                dataSource={rooms}
+                columns={columns}
+                rowKey="_id"
+                pagination={{ pageSize: 8 }} // 👈 limite à 8 rooms par page
+                bordered
+            />
         </div>
     );
 };

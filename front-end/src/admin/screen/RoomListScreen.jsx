@@ -1,3 +1,4 @@
+//  Le dashboard peut afficher un résumé des rooms
 import React from "react";
 import { FaTrash, FaPlus, FaEdit } from "react-icons/fa";
 import {
@@ -67,7 +68,7 @@ function RoomListScreen() {
             key: "actions",
             render: (_, room) => (
                 <Space size="middle">
-                    <Link to={`/admin/room/${room._id}/edit`}>
+                    <Link to={`/admin/rooms/${room._id}/edit`}>
                         <FaEdit />
                     </Link>
                     <Button
@@ -93,7 +94,7 @@ function RoomListScreen() {
                 </Title>
 
                 <Button type="primary" icon={<FaPlus />}>
-                    <Link to="/admin/room/create">Add a Room</Link>
+                    <Link to="/admin/rooms/create">Add a Room</Link>
                 </Button>
             </div>
 
