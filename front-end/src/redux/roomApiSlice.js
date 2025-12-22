@@ -1,9 +1,11 @@
-// le role de slice est de récup la liste des rooms , ajout, modif , suppri sans utilisé les fetch
+// le rôle du slice est de récupérer la liste des rooms, ajout, modif, suppression sans utiliser fetch
 import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query/react";
 
-export const roomApi = createApi({
+export const roomApiSlice = createApi({
     reducerPath: "roomApi",
-    baseQuery: fetchBaseQuery({ baseUrl: "/api/rooms" }),
+    baseQuery: fetchBaseQuery({
+        baseUrl: "/api/rooms",
+    }),
     tagTypes: ["Room"],
     endpoints: (builder) => ({
         // Récupérer toutes les chambres
@@ -11,6 +13,7 @@ export const roomApi = createApi({
             query: () => "/", // GET /api/rooms
             providesTags: ["Room"],
         }),
+
         // Créer une chambre
         createRoom: builder.mutation({
             query: (room) => ({
@@ -20,6 +23,7 @@ export const roomApi = createApi({
             }),
             invalidatesTags: ["Room"],
         }),
+
         // Supprimer une chambre
         deleteRoom: builder.mutation({
             query: (id) => ({
@@ -28,9 +32,10 @@ export const roomApi = createApi({
             }),
             invalidatesTags: ["Room"],
         }),
-        //  récup  room par id
+
+        // Récupérer une chambre par id
         getRoomById: builder.query({
-            query: (id) => `/rooms/${id}`,
+            query: (id) => `/${id}`,
         }),
     }),
 });
@@ -40,4 +45,4 @@ export const {
     useCreateRoomMutation,
     useDeleteRoomMutation,
     useGetRoomByIdQuery,
-} = roomApi;
+} = roomApiSlice;

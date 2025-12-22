@@ -57,16 +57,16 @@
 // );
 // export default Dashboard;
 import { FaTrash, FaPlus, FaEdit } from "react-icons/fa";
-import Message from "../../components/Message";
-import Loader from "../../components/Loader";
+// import Message from "../../components/Message";
+// import Loader from "../../components/Loader";
 import {
     useGetRoomsQuery,
     useDeleteRoomMutation,
     useCreateRoomMutation,
-} from "../../slices/roomApiSlice";
-import { toast } from "react-toastify";
+} from "../redux/roomApiSlice.js";
+// import { toast } from "react-toastify";
 import { Link } from "react-router-dom";
-import Pagination from "../../components/Pagination";
+// import Pagination from "../../components/Pagination";
 
 function RoomListScreen() {
     const { data, isLoading, error, refetch } = useGetRoomsQuery();
