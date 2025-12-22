@@ -26,18 +26,6 @@ function RoomListScreen() {
         }
     };
 
-    const createHandler = async () => {
-        if (window.confirm("create a new room ?")) {
-            try {
-                const createdRoom = await createRoom({}).unwrap();
-                alert("Room created successfully !");
-                window.location.href = `/admin/room/${createdRoom._id}/edit`;
-            } catch (err) {
-                alert("Error while creating room");
-            }
-        }
-    };
-
     const columns = [
         {
             title: "ID",
@@ -104,13 +92,8 @@ function RoomListScreen() {
                     Rooms
                 </Title>
 
-                <Button
-                    type="primary"
-                    icon={<FaPlus />}
-                    loading={loadingCreate}
-                    onClick={createHandler}
-                >
-                    Add Room
+                <Button type="primary" icon={<FaPlus />}>
+                    <Link to="/admin/room/create">Add a Room</Link>
                 </Button>
             </div>
 
