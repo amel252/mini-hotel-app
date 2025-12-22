@@ -13,7 +13,7 @@ import SingleRoom from "./components/SingleRoom";
 import CreateRoom from "./admin/rooms/CreateRoom";
 import EditRoom from "./admin/rooms/EditRoom";
 import AdminRooms from "./admin/rooms/AdminRooms";
-import Dashboard from "./admin/Dashboard";
+import Dashboard from "./admin/screen/RoomListScreen";
 const App = () => {
     return (
         <>
