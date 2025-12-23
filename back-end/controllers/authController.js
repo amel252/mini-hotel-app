@@ -14,6 +14,14 @@ passport.use(
         async (req, email, password, done) => {
             try {
                 const { username } = req.body; // récupère username depuis la requête
+                // Vérifier si l'email existe déjà
+                const existingUser = await UserModel.findOne({ email });
+                if (existingUser) {
+                    return done(null, false, {
+                        message: "Email already exist",
+                    });
+                }
+                // Créer le nouvel utilisateur
                 const user = await UserModel.create({
                     username,
                     email,
