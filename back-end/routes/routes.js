@@ -5,7 +5,7 @@ import {
     getRoomById,
     updateRoom,
     deleteRoom,
-} from "../controllers/roomControllers.js";
+} from "../controllers/roomController.js";
 import { catchErrors } from "../helpers.js";
 
 const router = express.Router();
