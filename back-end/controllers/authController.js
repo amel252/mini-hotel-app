@@ -1,38 +1,12 @@
-import passport from "passport";
-import { Strategy as LocalStrategy } from "passport-local";
-import UserModel from "../models/userModel.js";
-
-//  function d'inscription user
-passport.use(
-    "signup",
-    new LocalStrategy(
-        {
-            usernameField: "email", // on utilisera email comme identifiant
-            passwordField: "password",
-            passReqToCallback: true, // pour avoir accès à req.body
-        },
-        async (req, email, password, done) => {
-            try {
-                const { username } = req.body; // récupère username depuis la requête
-                // Vérifier si l'email existe déjà
-                const existingUser = await UserModel.findOne({ email });
-                if (existingUser) {
-                    return done(null, false, {
-                        message: "Email already exist",
-                    });
-                }
-                // Créer le nouvel utilisateur
-                const user = await UserModel.create({
-                    username,
-                    email,
-                    password,
-                });
-                return done(null, user);
-            } catch (error) {
-                return done(error);
-            }
-        }
-    )
-);
-
-export default passport;
+export const signup = (req, res) => {
+    // Passport met l'utilisateur créé dans req.user
+    if (!req.user) {
+        return res
+            .status(400)
+            .json({ message: "Erreur lors de l'inscription" });
+    }
+    res.status(201).json({
+        message: "Utilisateur créé avec succès",
+        user: req.user,
+    });
+};
