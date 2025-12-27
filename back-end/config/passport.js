@@ -1,3 +1,4 @@
+// Vérifie l’authentification. Compare email et mot de passe. Décide si l’utilisateur est valide ou pas (done(null, user) ou done(null, false)). Ne renvoie pas de JSON et ne gère pas la réponse HTTP.
 import passport from "passport";
 import { Strategy as LocalStrategy } from "passport-local";
 import bcrypt from "bcrypt";
@@ -22,15 +23,48 @@ passport.use(
                         message: "Email already exist",
                     });
                 }
-                // Hasher le mot de passe
-                const hashedPassword = await bcrypt.hash(password, 10);
                 // Créer le nouvel utilisateur
                 const user = await UserModel.create({
                     username,
                     email,
-                    password: hashedPassword,
+                    password,
                 });
                 return done(null, user);
+            } catch (error) {
+                return done(error);
+            }
+        }
+    )
+);
+// --- Stratégie login ---
+passport.use(
+    "login",
+    new LocalStrategy(
+        {
+            usernameField: "email",
+            passwordField: "password",
+            passReqToCallback: true,
+        },
+        async (req, email, password, done) => {
+            console.log("Recherche utilisateur avec email :", email);
+            try {
+                const user = await UserModel.findOne({ email });
+                if (!user) {
+                    return done(null, false, {
+                        message: "Utilisateur non trouvé",
+                    });
+                }
+
+                // Utiliser la méthode isValidPassword de ton modèle
+                const validate = await user.isValidPassword(password);
+                if (!validate) {
+                    return done(null, false, {
+                        message: "Mot de passe incorrect",
+                    });
+                }
+
+                // Connexion réussie
+                return done(null, user, { message: "Connexion réussie" });
             } catch (error) {
                 return done(error);
             }

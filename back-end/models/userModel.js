@@ -3,57 +3,35 @@ import bcrypt from "bcrypt";
 
 const userSchema = new mongoose.Schema(
     {
-        username: {
-            type: String,
-            required: true,
-            unique: true,
-        },
+        username: { type: String, required: true, unique: true, trim: true },
         email: {
             type: String,
             required: true,
             unique: true,
+            lowercase: true,
+            trim: true,
         },
-        password: {
-            type: String,
-            required: true,
-        },
+        password: { type: String, required: true },
         profilePicture: {
             type: String,
             default: "https://randomuser.me/api/portraits/women/65.jpg",
         },
-        isAdmin: {
-            type: Boolean,
-            default: false,
-        },
+        isAdmin: { type: Boolean, default: false },
     },
-    {
-        timestamps: true,
-    }
+    { timestamps: true }
 );
-//  pré Hook - avant d'enregistrer dans Mongo
+
+// 🔐 Hash automatique avant enregistrement
 userSchema.pre("save", async function (next) {
-    const user = this;
-
-    // Ne re-hashe pas si le mot de passe n’a pas changé
-    if (!user.isModified("password")) return next();
-
-    try {
-        const hash = await bcrypt.hash(user.password, 10);
-        user.password = hash;
-        next();
-    } catch (err) {
-        next(err);
-    }
+    if (!this.isModified("password")) return next();
+    this.password = this.password.trim();
+    this.password = await bcrypt.hash(this.password, 10);
+    next();
 });
-//  ajouter une methode pour vérifier le MDP
+
+// 🔍 Comparaison mot de passe au login
 userSchema.methods.isValidPassword = async function (password) {
-    const user = this;
-    //  comparé
-    const isSamePassword = await bcrypt.compare(password, user.password);
-    return isSamePassword;
-    //  return false ou true
+    return await bcrypt.compare(password.trim(), this.password);
 };
 
-const UserModel = mongoose.model("User", userSchema);
-
-export default UserModel;
+export default mongoose.model("User", userSchema);
