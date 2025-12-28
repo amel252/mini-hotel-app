@@ -1,6 +1,6 @@
 import React from "react";
-import Layout from "./components/Layout";
 import { Routes, Route } from "react-router-dom";
+import Layout from "./components/Layout/Layout";
 import Home from "./pages/Home";
 import About from "./pages/About";
 import Services from "./pages/Services";
@@ -14,6 +14,7 @@ import CreateRoom from "./admin/rooms/CreateRoom";
 import EditRoom from "./admin/rooms/EditRoom";
 import AdminRooms from "./admin/rooms/AdminRooms";
 import Dashboard from "./admin/screen/RoomListScreen";
+
 const App = () => {
     return (
         <>

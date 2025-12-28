@@ -4,12 +4,12 @@ import { Provider } from "react-redux";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { store } from "./redux/store";
 import App from "./App";
+import "./style/custom.css";
 
 ReactDOM.createRoot(document.getElementById("root")).render(
     <Provider store={store}>
         <BrowserRouter>
             {" "}
-            {/* <-- Obligatoire pour tous les <Link> */}
             <App />
         </BrowserRouter>
     </Provider>
