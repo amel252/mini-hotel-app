@@ -158,8 +158,15 @@ h6 {
     padding: 0;
     font-size: 14px;
     transition: all 0.5s;
+    padding-top: 10px;
 }
-
+/* div parent  */
+.header .topbar .container {
+    display: flex;
+    justify-content: space-between; /* email à gauche, réseaux sociaux à droite */
+    align-items: center;
+    padding: 0 20px;
+}
 .header .topbar .contact-info i {
     font-style: normal;
     color: var(--contrast-color);
@@ -177,7 +184,13 @@ h6 {
         font-size: 13px;
     }
 }
-
+/* Rajout */
+.header .topbar .contact-info {
+    display: flex;
+    gap: 10px; /* espace entre email et téléphone */
+    align-items: center;
+    margin-left: 10px;
+}
 .header .topbar .contact-info i a {
     line-height: 0;
     transition: 0.3s;
@@ -187,12 +200,30 @@ h6 {
     color: var(--contrast-color);
     text-decoration: underline;
 }
+.header .navmenu {
+    display: flex;
+    align-items: center;
+}
+.header .navmenu ul {
+    display: flex;
+    align-items: center;
+    margin: 0;
+    padding: 0;
+}
 
+/*  Rajout */
+.header .topbar .social-links {
+    display: flex;
+    gap: 15px; /* espace entre icônes */
+    align-items: center;
+    padding: 0 20px;
+}
 .header .topbar .social-links a {
     color: color-mix(in srgb, var(--contrast-color), transparent 40%);
     line-height: 0;
     transition: 0.3s;
-    margin-left: 20px;
+    gap: 20px;
+    /* margin-left: 50px; */
 }
 
 .header .topbar .social-links a:hover {
@@ -201,13 +232,28 @@ h6 {
 
 .header .branding {
     min-height: 60px;
-    padding: 10px 0;
+    /* padding: 10px 0; */
+    padding: 0;
+    display: flex;
+    align-items: center;
 }
-
+.header .branding .container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: nowrap; /* ⭐ FIX IMPORTANT */
+    gap: 140px;
+    margin-left: 1.5rem;
+}
 .header .logo {
-    line-height: 1;
+    /* line-height: 1; */
+    display: flex;
+    align-items: center;
 }
-
+/* links site header */
+.header .navmenu {
+    margin-left: 80px;
+}
 .header .logo img {
     max-height: 36px;
     margin-right: 8px;
@@ -234,6 +280,31 @@ h6 {
 # Navigation Menu
 --------------------------------------------------------------*/
 /* Navmenu - Desktop */
+.navmenu span {
+    color: var(--nav-color);
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    padding: 18px 15px;
+    font-size: 15px;
+    font-family: var(--nav-font);
+}
+.navmenu li:hover > span {
+    color: var(--nav-hover-color);
+}
+/* Rajout */
+@media (min-width: 1200px) {
+    .navmenu a {
+        display: inline-block; /* supprime flex + space-between */
+        padding: 10px 15px; /* augmente la taille verticale */
+        font-size: 16px; /* plus lisible */
+    }
+
+    .navmenu ul {
+        gap: 25px; /* espace entre les liens */
+    }
+}
+/* Attention */
 @media (min-width: 1200px) {
     .navmenu {
         padding: 0;
@@ -346,6 +417,23 @@ h6 {
     }
 }
 
+/* Rajout mobile  */
+/* --- Burger Mobile --- */
+.mobile-nav-toggle {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    font-size: 28px;
+    cursor: pointer;
+    z-index: 9999;
+}
+
+/* --- Dropdown Mobile --- */
+.navmenu .dropdown > .dropdown-active {
+    display: block;
+    background-color: rgba(33, 37, 41, 0.03);
+}
+/*  attention */
 /*---------- Navmenu - Mobile ---------------*/
 @media (max-width: 1199px) {
     .mobile-nav-toggle {
@@ -2059,9 +2147,9 @@ section,
 /*--------------------------------------------------------------
 # Testimonials Section
 --------------------------------------------------------------*/
-.testimonials {
-    /* Responsive Styles */
-}
+/* .testimonials { */
+/* Responsive Styles */
+/* } Revoir le probleme*/
 
 .testimonials .testimonials-wrapper {
     padding: 20px 0;
