@@ -408,14 +408,14 @@ export default function Home() {
                             <div className="about-images">
                                 <div className="main-image">
                                     <img
-                                        src="assets/img/hotel/showcase-8.webp"
+                                        src="/assets/hotel/showcase-8.webp"
                                         alt="Grandview Resort Main View"
                                         className="img-fluid"
                                     />
                                 </div>
                                 <div className="secondary-image">
                                     <img
-                                        src="assets/img/hotel/room-12.webp"
+                                        src="/assets/hotel/room-12.webp"
                                         alt="Luxury Suite Interior"
                                         className="img-fluid"
                                     />
@@ -461,7 +461,7 @@ export default function Home() {
                             <div className="hero-room-showcase">
                                 <div className="showcase-image-container">
                                     <img
-                                        src="assets/img/hotel/room-14.webp"
+                                        src="/assets/hotel/room-14.webp"
                                         alt="Grand Presidential Suite"
                                         className="img-fluid"
                                     />
@@ -555,7 +555,7 @@ export default function Home() {
                                 >
                                     <div className="card-image">
                                         <img
-                                            src="assets/img/hotel/room-6.webp"
+                                            src="/assets/hotel/room-6.webp"
                                             alt="Executive Room"
                                             className="img-fluid"
                                         />
@@ -602,7 +602,7 @@ export default function Home() {
                                 >
                                     <div className="card-image">
                                         <img
-                                            src="assets/img/hotel/room-19.webp"
+                                            src="/assets/hotel/room-19.webp"
                                             alt="Garden View"
                                             className="img-fluid"
                                         />
@@ -649,7 +649,7 @@ export default function Home() {
                                 >
                                     <div className="card-image">
                                         <img
-                                            src="assets/img/hotel/room-12.webp"
+                                            src="/assets/hotel/room-12.webp"
                                             alt="Family Suite"
                                             className="img-fluid"
                                         />
@@ -701,7 +701,7 @@ export default function Home() {
                             <div className="minimal-room-card">
                                 <div className="room-image">
                                     <img
-                                        src="assets/img/hotel/room-1.webp"
+                                        src="/assets/hotel/room-1.webp"
                                         alt="classNameic Room"
                                         className="img-fluid"
                                     />
@@ -736,7 +736,7 @@ export default function Home() {
                             <div className="minimal-room-card">
                                 <div className="room-image">
                                     <img
-                                        src="assets/img/hotel/room-5.webp"
+                                        src="/assets/hotel/room-5.webp"
                                         alt="Superior Room"
                                         className="img-fluid"
                                     />
@@ -771,7 +771,7 @@ export default function Home() {
                             <div className="minimal-room-card">
                                 <div className="room-image">
                                     <img
-                                        src="assets/img/hotel/room-8.webp"
+                                        src="/assets/hotel/room-8.webp"
                                         alt="Premium Room"
                                         className="img-fluid"
                                     />
@@ -806,7 +806,7 @@ export default function Home() {
                             <div className="minimal-room-card">
                                 <div className="room-image">
                                     <img
-                                        src="assets/img/hotel/room-17.webp"
+                                        src="/assets/hotel/room-17.webp"
                                         alt="Luxury Suite"
                                         className="img-fluid"
                                     />
@@ -870,7 +870,7 @@ export default function Home() {
                             <div className="facility-card">
                                 <div className="facility-image">
                                     <img
-                                        src="assets/img/hotel/amenities-1.webp"
+                                        src="/assets/hotel/amenties.jpg"
                                         alt="Wireless Internet"
                                         className="img-fluid"
                                     />
@@ -909,7 +909,7 @@ export default function Home() {
                             <div className="facility-card">
                                 <div className="facility-image">
                                     <img
-                                        src="assets/img/hotel/amenities-3.webp"
+                                        src="/assets/hotel/amenities-1.webp"
                                         alt="Swimming Pool"
                                         className="img-fluid"
                                     />
@@ -948,7 +948,7 @@ export default function Home() {
                             <div className="facility-card">
                                 <div className="facility-image">
                                     <img
-                                        src="assets/img/hotel/amenities-5.webp"
+                                        src="/assets/hotel/amenities.jpg"
                                         alt="Valet Parking"
                                         className="img-fluid"
                                     />
@@ -987,7 +987,7 @@ export default function Home() {
                             <div className="facility-card">
                                 <div className="facility-image">
                                     <img
-                                        src="assets/img/hotel/amenities-2.webp"
+                                        src="/assets/hotel/amenties-9.jpg"
                                         alt="Fitness Center"
                                         className="img-fluid"
                                     />
@@ -1026,7 +1026,7 @@ export default function Home() {
                             <div className="facility-card">
                                 <div className="facility-image">
                                     <img
-                                        src="assets/img/hotel/dining-2.webp"
+                                        src="/assets/hotel/dining-2.webp"
                                         alt="Fine Dining"
                                         className="img-fluid"
                                     />
@@ -1065,7 +1065,7 @@ export default function Home() {
                             <div className="facility-card">
                                 <div className="facility-image">
                                     <img
-                                        src="assets/img/hotel/amenities-4.webp"
+                                        src="/assets/hotel/amenities-4.webp"
                                         alt="Spa Services"
                                         className="img-fluid"
                                     />
@@ -1139,7 +1139,7 @@ export default function Home() {
                                     </div>
                                     <div className="testimonial-author">
                                         <img
-                                            src="assets/img/person/person-m-5.webp"
+                                            src="/assets/person/person-m-5.webp"
                                             alt="Client"
                                             className="img-fluid rounded-circle"
                                             loading="lazy"
@@ -1172,7 +1172,7 @@ export default function Home() {
                                     </div>
                                     <div className="testimonial-author">
                                         <img
-                                            src="assets/img/person/person-f-7.webp"
+                                            src="/assets/person/person-f-7.webp"
                                             alt="Client"
                                             className="img-fluid rounded-circle"
                                             loading="lazy"
@@ -1204,7 +1204,7 @@ export default function Home() {
                                     </div>
                                     <div className="testimonial-author">
                                         <img
-                                            src="assets/img/person/person-m-9.webp"
+                                            src="/assets/person/person-m-9.webp"
                                             alt="Client"
                                             className="img-fluid rounded-circle"
                                             loading="lazy"
@@ -1236,7 +1236,7 @@ export default function Home() {
                                     </div>
                                     <div className="testimonial-author">
                                         <img
-                                            src="assets/img/person/person-f-3.webp"
+                                            src="/assets/person/person-f-3.webp"
                                             alt="Client"
                                             className="img-fluid rounded-circle"
                                             loading="lazy"
@@ -1279,7 +1279,7 @@ export default function Home() {
                                 </div>
                                 <div className="offer-image">
                                     <img
-                                        src="assets/img/hotel/showcase-3.webp"
+                                        src="/assets/hotel/showcase-3.webp"
                                         alt="Weekend Getaway"
                                         className="img-fluid"
                                     />
@@ -1328,7 +1328,7 @@ export default function Home() {
                                 </div>
                                 <div className="offer-image">
                                     <img
-                                        src="assets/img/hotel/showcase-7.webp"
+                                        src="/assets/hotel/showcase-7.webp"
                                         alt="Extended Stay Deal"
                                         className="img-fluid"
                                     />
@@ -1376,7 +1376,7 @@ export default function Home() {
                                 </div>
                                 <div className="offer-image">
                                     <img
-                                        src="assets/img/hotel/showcase-11.webp"
+                                        src="/assets/hotel/showcase-11.webp"
                                         alt="Advance Booking"
                                         className="img-fluid"
                                     />
@@ -1527,7 +1527,7 @@ export default function Home() {
                         >
                             <div className="image-wrapper">
                                 <img
-                                    src="assets/img/hotel/showcase-9.webp"
+                                    src="/assets/hotel/showcase-9.webp"
                                     alt="Luxury Hotel Experience"
                                     className="img-fluid"
                                 />
@@ -1573,7 +1573,7 @@ export default function Home() {
                                         <i className="bi bi-heart-fill"></i>
                                     </div>
                                     <img
-                                        src="assets/img/hotel/event-1.webp"
+                                        src="/assets/hotel/event-1.webp"
                                         alt="Wedding Celebrations"
                                         className="img-fluid"
                                     />
@@ -1616,7 +1616,7 @@ export default function Home() {
                                         <i className="bi bi-building"></i>
                                     </div>
                                     <img
-                                        src="assets/img/hotel/event-4.webp"
+                                        src="/assets/hotel/event-4.webp"
                                         alt="Business Conferences"
                                         className="img-fluid"
                                     />
@@ -1702,7 +1702,7 @@ export default function Home() {
                                         <i className="bi bi-people"></i>
                                     </div>
                                     <img
-                                        src="assets/img/hotel/event-5.webp"
+                                        src="/assets/hotel/event-5.webp"
                                         alt="Corporate Retreats"
                                         className="img-fluid"
                                     />
