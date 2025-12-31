@@ -84,7 +84,7 @@ passport.use(
         },
         async (payload, done) => {
             try {
-                return done(null, payload);
+                return done(null, payload); // payload = { id, email }
             } catch (err) {
                 return done(err, false);
             }

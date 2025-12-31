@@ -8,6 +8,7 @@ import passport from "passport";
 
 import authRoutes from "./routes/authRoutes.js";
 import roomRoutes from "./routes/roomRoutes.js";
+import privateRoutes from "./routes/privateRoutes.js";
 
 const PORT = process.env.PORT || 3200;
 
@@ -25,7 +26,11 @@ mongoose
     .connect(process.env.MONGO_URI)
     .then(() => console.log("MongoDB est connecté ✅"))
     .catch((err) => console.error("Erreur de connexion MongoDB ❌", err));
-
+app.use(
+    "/admin",
+    passport.authenticate("jwt", { session: false }),
+    privateRoutes
+);
 app.use("/api/auth", authRoutes);
 app.use("/api/rooms", roomRoutes);
 
