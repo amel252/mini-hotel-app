@@ -2,6 +2,7 @@
 // import passport from "passport";
 
 import passport from "passport";
+import jwt from "jsonwebtoken";
 
 // Signup
 export const signup = (req, res, next) => {
@@ -24,10 +25,10 @@ export const login = (req, res, next) => {
         if (err) return next(err);
 
         // Debug : log de l’utilisateur trouvé et du body
-        console.log("Body reçu :", req.body);
-        console.log("Utilisateur trouvé :", user);
-        console.log("req.body.email :", req.body.email);
-        console.log("req.body.password :", req.body.password);
+        // console.log("Body reçu :", req.body);
+        // console.log("Utilisateur trouvé :", user);
+        // console.log("req.body.email :", req.body.email);
+        // console.log("req.body.password :", req.body.password);
 
         if (!user)
             return res.status(401).json({
@@ -36,9 +37,15 @@ export const login = (req, res, next) => {
 
         req.login(user, { session: false }, (error) => {
             if (error) return next(error);
-
+            // Générer le JWT
+            const token = jwt.sign(
+                { id: user._id, email: user.email }, // payload
+                "amel123", // secret
+                { expiresIn: "1h" } // expiration
+            );
             return res.json({
                 message: "Connexion réussie",
+                token, // <-- renvoyer le token au client
                 user: {
                     id: user._id,
                     email: user.email,

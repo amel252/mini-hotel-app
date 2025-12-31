@@ -1,13 +1,13 @@
+import dotenv from "dotenv";
+dotenv.config();
 import express from "express";
 import mongoose from "mongoose";
+
 import "./config/passport.js";
 import passport from "passport";
 
 import authRoutes from "./routes/authRoutes.js";
 import roomRoutes from "./routes/roomRoutes.js";
-
-import dotenv from "dotenv";
-dotenv.config();
 
 const PORT = process.env.PORT || 3200;
 

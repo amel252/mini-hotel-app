@@ -1,8 +1,10 @@
 // Vérifie l’authentification. Compare email et mot de passe. Décide si l’utilisateur est valide ou pas (done(null, user) ou done(null, false)). Ne renvoie pas de JSON et ne gère pas la réponse HTTP.
 import passport from "passport";
 import { Strategy as LocalStrategy } from "passport-local";
-import bcrypt from "bcrypt";
 import UserModel from "../models/userModel.js";
+// import JWT from "passport-jwt";
+import { Strategy as JwtStrategy, ExtractJwt } from "passport-jwt";
+// const { Strategy: JWTstrategy, ExtractJwt } = JWT;
 
 //  function d'inscription user
 passport.use(
@@ -67,6 +69,24 @@ passport.use(
                 return done(null, user, { message: "Connexion réussie" });
             } catch (error) {
                 return done(error);
+            }
+        }
+    )
+);
+
+console.log("JWT_SECRET:", process.env.JWT_SECRET);
+//  fonction token
+passport.use(
+    new JwtStrategy(
+        {
+            secretOrKey: "amel123",
+            jwtFromRequest: ExtractJwt.fromAuthHeaderAsBearerToken(),
+        },
+        async (payload, done) => {
+            try {
+                return done(null, payload);
+            } catch (err) {
+                return done(err, false);
             }
         }
     )
