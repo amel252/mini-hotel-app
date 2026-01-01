@@ -1,0 +1,401 @@
+// main: ../main.scss
+/*--------------------------------------------------------------
+# Room Details Section
+--------------------------------------------------------------*/
+.room-details {
+  .room-header-image {
+    position: relative;
+
+    img {
+      border-radius: 12px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    }
+
+    .room-badge {
+      position: absolute;
+      top: 20px;
+      left: 20px;
+      background: var(--accent-color);
+      padding: 8px 16px;
+      border-radius: 20px;
+      font-size: 14px;
+      font-weight: 600;
+    }
+  }
+
+  .room-header-content {
+    padding-left: 30px;
+
+    @media (max-width: 992px) {
+      padding-left: 0;
+      margin-top: 30px;
+    }
+  }
+
+  .room-rating {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+
+    .rating-score {
+      background: var(--accent-color);
+      color: var(--contrast-color);
+      padding: 8px 12px;
+      border-radius: 6px;
+      font-weight: 600;
+      font-size: 16px;
+    }
+
+    .stars {
+      color: #ffc107;
+      font-size: 18px;
+
+      i {
+        margin-right: 2px;
+      }
+    }
+
+    .reviews-count {
+      color: color-mix(in srgb, var(--default-color), transparent 30%);
+      font-size: 14px;
+    }
+  }
+
+  .room-title {
+    font-size: 2.5rem;
+    margin-bottom: 15px;
+    font-weight: 700;
+
+    @media (max-width: 768px) {
+      font-size: 2rem;
+    }
+  }
+
+  .room-tagline {
+    font-size: 18px;
+    color: color-mix(in srgb, var(--default-color), transparent 20%);
+    margin-bottom: 25px;
+  }
+
+  .room-capacity {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+
+    .capacity-item {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 14px;
+
+      i {
+        color: var(--accent-color);
+        font-size: 16px;
+      }
+    }
+  }
+
+  .room-price {
+    margin-bottom: 25px;
+
+    .price-amount {
+      font-size: 2.5rem;
+      font-weight: 700;
+      color: var(--heading-color);
+    }
+
+    .price-period {
+      font-size: 16px;
+      color: color-mix(in srgb, var(--default-color), transparent 30%);
+      margin-left: 8px;
+    }
+  }
+
+  .btn-book-now {
+    background: var(--accent-color);
+    color: var(--contrast-color);
+    padding: 12px 30px;
+    border-radius: 8px;
+    border: none;
+    font-weight: 600;
+    font-size: 16px;
+    transition: all 0.3s;
+
+    &:hover {
+      background: color-mix(in srgb, var(--accent-color), black 10%);
+      transform: translateY(-2px);
+    }
+  }
+
+  .section-subtitle {
+    font-size: 1.8rem;
+    margin-bottom: 20px;
+    color: var(--heading-color);
+    font-weight: 600;
+  }
+
+  .room-gallery {
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: 2fr 1fr;
+      gap: 15px;
+
+      @media (max-width: 768px) {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .gallery-main {
+      img {
+        border-radius: 12px;
+        width: 100%;
+        height: 400px;
+        object-fit: cover;
+      }
+    }
+
+    .gallery-thumbnails {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 15px;
+
+      img {
+        border-radius: 8px;
+        width: 100%;
+        height: 185px;
+        object-fit: cover;
+        transition: transform 0.3s;
+
+        &:hover {
+          transform: scale(1.05);
+        }
+      }
+    }
+  }
+
+  .room-description {
+    p {
+      font-size: 16px;
+      line-height: 1.7;
+      margin-bottom: 20px;
+    }
+  }
+
+  .highlight-box {
+    background: var(--surface-color);
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+    border-left: 4px solid var(--accent-color);
+
+    .highlight-icon {
+      width: 60px;
+      height: 60px;
+      background: var(--accent-color);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 20px;
+
+      i {
+        font-size: 24px;
+        color: var(--contrast-color);
+      }
+    }
+
+    h4 {
+      margin-bottom: 15px;
+      font-size: 1.2rem;
+    }
+
+    .quote-author {
+      margin-top: 15px;
+      font-style: italic;
+      color: color-mix(in srgb, var(--default-color), transparent 30%);
+      font-size: 14px;
+    }
+  }
+
+  .room-amenities {
+    .amenity-category {
+      h5 {
+        color: var(--heading-color);
+        font-size: 1.1rem;
+        margin-bottom: 15px;
+        font-weight: 600;
+      }
+
+      ul {
+        list-style: none;
+        padding: 0;
+
+        li {
+          display: flex;
+          align-items: center;
+          margin-bottom: 8px;
+          font-size: 15px;
+
+          i {
+            color: var(--accent-color);
+            margin-right: 10px;
+            font-size: 16px;
+          }
+        }
+      }
+    }
+  }
+
+  .room-tabs {
+    .nav-tabs {
+      border: none;
+      margin-bottom: 30px;
+
+      .nav-link {
+        border: none;
+        background: transparent;
+        color: var(--default-color);
+        padding: 15px 30px;
+        font-weight: 500;
+        border-radius: 8px;
+        margin-right: 10px;
+
+        &.active {
+          background: var(--accent-color);
+          color: var(--contrast-color);
+        }
+
+        &:hover {
+          background: color-mix(in srgb, var(--accent-color), transparent 80%);
+        }
+      }
+    }
+
+    .tab-content-wrapper {
+      background: var(--surface-color);
+      padding: 30px;
+      border-radius: 12px;
+      box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+
+      h6 {
+        color: var(--heading-color);
+        font-weight: 600;
+        margin-bottom: 10px;
+        font-size: 16px;
+      }
+
+      ul {
+        list-style: none;
+        padding: 0;
+
+        li {
+          padding: 5px 0;
+          color: color-mix(in srgb, var(--default-color), transparent 20%);
+        }
+      }
+    }
+  }
+
+  .room-addons {
+    .addon-card {
+      background: var(--surface-color);
+      padding: 25px;
+      border-radius: 12px;
+      box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+      text-align: center;
+      transition: transform 0.3s;
+
+      &:hover {
+        transform: translateY(-5px);
+      }
+
+      .addon-icon {
+        width: 70px;
+        height: 70px;
+        background: color-mix(in srgb, var(--accent-color), transparent 90%);
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: 0 auto 20px;
+
+        i {
+          font-size: 28px;
+          color: var(--accent-color);
+        }
+      }
+
+      h5 {
+        margin-bottom: 15px;
+        font-size: 1.2rem;
+      }
+
+      p {
+        color: color-mix(in srgb, var(--default-color), transparent 20%);
+        margin-bottom: 15px;
+        font-size: 14px;
+        line-height: 1.6;
+      }
+
+      .addon-price {
+        font-size: 18px;
+        font-weight: 600;
+        color: var(--accent-color);
+      }
+    }
+  }
+
+  .booking-cta {
+    .booking-card {
+      background: linear-gradient(135deg, var(--accent-color), color-mix(in srgb, var(--accent-color), black 20%));
+      color: var(--contrast-color);
+      padding: 40px;
+      border-radius: 15px;
+
+      h4 {
+        color: var(--contrast-color);
+        margin-bottom: 10px;
+        font-size: 1.5rem;
+      }
+
+      p {
+        color: color-mix(in srgb, var(--contrast-color), transparent 20%);
+        margin-bottom: 0;
+      }
+
+      .price-display {
+        margin-bottom: 20px;
+        text-align: right;
+
+        @media (max-width: 992px) {
+          text-align: center;
+          margin-top: 20px;
+        }
+
+        .price {
+          font-size: 2.5rem;
+          font-weight: 700;
+          color: var(--contrast-color);
+        }
+
+        .period {
+          font-size: 16px;
+          color: color-mix(in srgb, var(--contrast-color), transparent 30%);
+          display: block;
+        }
+      }
+
+      .btn-primary {
+        background: var(--accent-color);
+        border: none;
+        padding: 12px 30px;
+        font-weight: 600;
+        border-radius: 8px;
+
+        &:hover {
+          background: color-mix(in srgb, var(--accent-color), black 20%);
+        }
+      }
+    }
+  }
+}

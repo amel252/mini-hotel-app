@@ -1,0 +1,181 @@
+// main: ../main.scss
+/*--------------------------------------------------------------
+# Events Cards Section
+--------------------------------------------------------------*/
+.events-cards {
+  .event-item {
+    background: var(--surface-color);
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 10px 40px color-mix(in srgb, var(--default-color), transparent 85%);
+    transition: all 0.4s ease;
+    height: 100%;
+
+    &:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 20px 60px color-mix(in srgb, var(--default-color), transparent 75%);
+    }
+
+    .event-header {
+      position: relative;
+      height: 200px;
+      overflow: hidden;
+
+      .event-icon {
+        position: absolute;
+        top: 20px;
+        right: 20px;
+        width: 50px;
+        height: 50px;
+        background: linear-gradient(135deg, var(--accent-color), color-mix(in srgb, var(--accent-color), var(--heading-color) 30%));
+        border-radius: 15px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        z-index: 2;
+        box-shadow: 0 5px 20px color-mix(in srgb, var(--accent-color), transparent 60%);
+
+        i {
+          font-size: 20px;
+          color: var(--contrast-color);
+        }
+      }
+
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: transform 0.4s ease;
+      }
+
+      &::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: linear-gradient(to bottom, transparent 60%, color-mix(in srgb, var(--default-color), transparent 80%));
+        z-index: 1;
+      }
+    }
+
+    .event-content {
+      padding: 25px;
+
+      h4 {
+        color: var(--heading-color);
+        font-size: 22px;
+        font-weight: 600;
+        margin-bottom: 15px;
+        line-height: 1.3;
+      }
+
+      p {
+        color: color-mix(in srgb, var(--default-color), transparent 20%);
+        font-size: 15px;
+        line-height: 1.6;
+        margin-bottom: 20px;
+      }
+
+      .event-features {
+        margin-bottom: 25px;
+
+        .feature-item {
+          display: block;
+          color: color-mix(in srgb, var(--default-color), transparent 10%);
+          font-size: 14px;
+          margin-bottom: 8px;
+
+          i {
+            color: var(--accent-color);
+            margin-right: 8px;
+            font-size: 12px;
+          }
+        }
+      }
+
+      .event-link {
+        color: var(--accent-color);
+        font-weight: 600;
+        font-size: 16px;
+        text-decoration: none;
+        display: inline-flex;
+        align-items: center;
+        transition: all 0.3s ease;
+
+        i {
+          margin-left: 8px;
+          font-size: 14px;
+          transition: transform 0.3s ease;
+        }
+
+        &:hover {
+          color: var(--heading-color);
+
+          i {
+            transform: translateX(5px);
+          }
+        }
+      }
+    }
+
+    &:hover {
+      .event-header img {
+        transform: scale(1.05);
+      }
+    }
+  }
+
+  @media (max-width: 768px) {
+    .event-item {
+      .event-header {
+        height: 180px;
+
+        .event-icon {
+          width: 45px;
+          height: 45px;
+          top: 15px;
+          right: 15px;
+
+          i {
+            font-size: 18px;
+          }
+        }
+      }
+
+      .event-content {
+        padding: 20px;
+
+        h4 {
+          font-size: 20px;
+          margin-bottom: 12px;
+        }
+
+        p {
+          font-size: 14px;
+          margin-bottom: 15px;
+        }
+
+        .event-features {
+          margin-bottom: 20px;
+
+          .feature-item {
+            font-size: 13px;
+            margin-bottom: 6px;
+          }
+        }
+
+        .event-link {
+          font-size: 15px;
+        }
+      }
+    }
+  }
+
+  @media (max-width: 992px) {
+    .row>div:nth-child(n+5) {
+      margin-top: 2rem;
+    }
+  }
+}

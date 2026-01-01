@@ -1,0 +1,149 @@
+// main: ../main.scss
+/*--------------------------------------------------------------
+# Amenities Cards Section
+--------------------------------------------------------------*/
+.amenities-cards {
+  .facility-card {
+    background-color: var(--surface-color);
+    border-radius: 16px;
+    height: 100%;
+    overflow: hidden;
+    box-shadow: 0 5px 25px color-mix(in srgb, var(--default-color), transparent 88%);
+    transition: all 0.4s ease;
+    position: relative;
+
+    &:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 15px 40px color-mix(in srgb, var(--default-color), transparent 80%);
+
+      .facility-image {
+        .facility-overlay {
+          background: color-mix(in srgb, var(--accent-color), transparent 15%);
+        }
+
+        img {
+          transform: scale(1.05);
+        }
+      }
+    }
+  }
+
+  .facility-image {
+    position: relative;
+    height: 220px;
+    overflow: hidden;
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.4s ease;
+    }
+
+    .facility-overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: color-mix(in srgb, var(--default-color), transparent 30%);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: all 0.4s ease;
+
+      i {
+        font-size: 48px;
+        color: var(--contrast-color);
+      }
+    }
+  }
+
+  .facility-info {
+    padding: 30px 25px;
+
+    h4 {
+      font-size: 22px;
+      font-weight: 700;
+      margin-bottom: 15px;
+      color: var(--heading-color);
+    }
+
+    p {
+      color: color-mix(in srgb, var(--default-color), transparent 15%);
+      font-size: 15px;
+      line-height: 1.7;
+      margin-bottom: 20px;
+    }
+  }
+
+  .facility-features {
+    display: flex;
+    gap: 15px;
+    flex-wrap: wrap;
+
+    span {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 13px;
+      font-weight: 500;
+      color: var(--accent-color);
+
+      i {
+        font-size: 14px;
+      }
+    }
+  }
+
+  @media (max-width: 992px) {
+    .facility-image {
+      height: 200px;
+    }
+
+    .facility-info {
+      padding: 25px 20px;
+
+      h4 {
+        font-size: 20px;
+        margin-bottom: 12px;
+      }
+
+      p {
+        font-size: 14px;
+        margin-bottom: 18px;
+      }
+    }
+  }
+
+  @media (max-width: 768px) {
+    .facility-image {
+      height: 180px;
+
+      .facility-overlay i {
+        font-size: 40px;
+      }
+    }
+
+    .facility-info {
+      padding: 22px 18px;
+
+      h4 {
+        font-size: 18px;
+      }
+
+      p {
+        font-size: 13px;
+        line-height: 1.6;
+      }
+    }
+
+    .facility-features {
+      gap: 12px;
+
+      span {
+        font-size: 12px;
+      }
+    }
+  }
+}

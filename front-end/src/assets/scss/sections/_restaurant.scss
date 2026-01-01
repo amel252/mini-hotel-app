@@ -1,0 +1,138 @@
+// main: ../main.scss
+/*--------------------------------------------------------------
+# Restaurant Section
+--------------------------------------------------------------*/
+.restaurant {
+  .about-content {
+    h2 {
+      margin-bottom: 1.5rem;
+      font-weight: 700;
+      position: relative;
+    }
+
+    .fst-italic {
+      font-size: 1.1rem;
+      margin-bottom: 1.5rem;
+      color: color-mix(in srgb, var(--heading-color), transparent 20%);
+    }
+
+    .feature-item {
+      margin-bottom: 1.5rem;
+      padding: 20px;
+      background-color: var(--surface-color);
+      border-radius: 8px;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+      transition: all 0.3s ease;
+
+      &:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+      }
+
+      i {
+        font-size: 1.8rem;
+        color: var(--accent-color);
+        margin-bottom: 12px;
+        display: inline-block;
+      }
+
+      h4 {
+        font-size: 1.2rem;
+        margin-bottom: 10px;
+        font-weight: 600;
+      }
+
+      p {
+        margin-bottom: 0;
+        font-size: 0.95rem;
+      }
+    }
+
+    .signature {
+      .chef-name {
+        font-weight: 600;
+        font-style: italic;
+        margin-bottom: 5px;
+      }
+
+      img {
+        max-width: 180px;
+        height: auto;
+        margin-top: 5px;
+      }
+    }
+  }
+
+  .about-gallery {
+    position: relative;
+
+    .years-badge {
+      position: absolute;
+      bottom: 30px;
+      right: 30px;
+      z-index: 2;
+      background-color: var(--accent-color);
+      color: var(--contrast-color);
+      padding: 15px 25px;
+      border-radius: 8px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+
+      .number {
+        font-size: 2.5rem;
+        font-weight: 700;
+        line-height: 1;
+      }
+
+      .text {
+        font-size: 0.9rem;
+        font-weight: 500;
+      }
+    }
+
+    img {
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+      transition: all 0.3s ease;
+
+      &:hover {
+        transform: scale(1.02);
+      }
+    }
+  }
+
+  @media (max-width: 992px) {
+    .about-gallery {
+      margin-top: 2rem;
+
+      .years-badge {
+        bottom: 20px;
+        right: 20px;
+        padding: 10px 20px;
+
+        .number {
+          font-size: 2rem;
+        }
+
+        .text {
+          font-size: 0.8rem;
+        }
+      }
+    }
+  }
+
+  @media (max-width: 576px) {
+    .about-gallery {
+      .years-badge {
+        bottom: 15px;
+        right: 15px;
+      }
+    }
+
+    .about-content {
+      .signature img {
+        max-width: 150px;
+      }
+    }
+  }
+}
