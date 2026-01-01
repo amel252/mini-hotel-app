@@ -146,6 +146,7 @@ const Header = () => {
                             <li>
                                 <Link to="/login">
                                     <LuLogIn size={30} />
+                                    Sign in
                                 </Link>
                             </li>
                             {/* Dropdown Language supprimé */}
