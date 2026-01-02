@@ -69,7 +69,7 @@ export default function Home() {
                                 <div className="hero-images">
                                     <div className="main-image">
                                         <img
-                                            src="/assets/hotel/showcase-3.webp"
+                                            src="../assets/images/hotel/showcase-3.webp"
                                             alt="Luxury Hotel"
                                             className="img-fluid"
                                         />
