@@ -7,7 +7,8 @@ import App from "./App";
 //
 
 import "bootstrap/dist/css/bootstrap.min.css"; // Bootstrap
-import "../public/assets/scss/main.css"; // ton CSS template
+import "bootstrap-icons/font/bootstrap-icons.css"; //  bootstrap icons
+import "./style/scss/main.css"; // ton CSS template
 import "aos/dist/aos.css"; // AOS
 import "glightbox/dist/css/glightbox.css"; // GLightbox
 import "swiper/css";

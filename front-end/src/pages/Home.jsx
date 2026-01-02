@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 export default function Home() {
     return (
@@ -44,18 +45,18 @@ export default function Home() {
                                     </div>
 
                                     <div className="hero-buttons">
-                                        <a
-                                            href="booking.html"
+                                        <Link
+                                            to="/booking"
                                             className="btn btn-primary"
                                         >
                                             Book Now
-                                        </a>
-                                        <a
-                                            href="rooms.html"
+                                        </Link>
+                                        <Link
+                                            to="/rooms"
                                             className="btn btn-outline"
                                         >
                                             View Rooms
-                                        </a>
+                                        </Link>
                                     </div>
                                 </div>
                             </div>
@@ -69,7 +70,7 @@ export default function Home() {
                                 <div className="hero-images">
                                     <div className="main-image">
                                         <img
-                                            src="../assets/images/hotel/showcase-3.webp"
+                                            src="/assets/images/hotel/showcase-3.webp"
                                             alt="Luxury Hotel"
                                             className="img-fluid"
                                         />
@@ -95,7 +96,7 @@ export default function Home() {
                                             </p>
                                             <div className="guest-info">
                                                 <img
-                                                    src="/assets/img/person/person-f-3.webp"
+                                                    src="/assets/images/person/person-f-3.webp"
                                                     alt="Guest"
                                                     className="guest-avatar"
                                                 />
@@ -156,172 +157,7 @@ export default function Home() {
                 </div>
             </section>
 
-            {/* <section id="hotel-hero" className="hotel-hero section">
-                <div
-                    className="container"
-                    data-aos="fade-up"
-                    data-aos-delay="100"
-                >
-                    <div className="row gy-4 align-items-center"> */}
-            {/*  div texte
-                        <div
-                            className="col-lg-6"
-                            data-aos="fade-right"
-                            data-aos-delay="200"
-                        >
-                            <div className="hero-content">
-                                <h1>Luxury Redefined in Every Stay</h1>
-                                <p className="lead">
-                                    Experience unparalleled comfort and
-                                    sophistication at our premium hotel. From
-                                    elegant suites to world-className amenities,
-                                    every moment of your stay is crafted to
-                                    perfection.
-                                </p>
-                                <div className="hero-features">
-                                    <div className="feature-item">
-                                        <i className="bi bi-wifi"></i>
-                                        <span>Complimentary WiFi</span>
-                                    </div>
-                                    <div className="feature-item">
-                                        <i className="bi bi-car-front"></i>
-                                        <span>Valet Parking</span>
-                                    </div>
-                                    <div className="feature-item">
-                                        <i className="bi bi-cup-hot"></i>
-                                        <span>24/7 Room Service</span>
-                                    </div>
-                                </div>
-                                <div className="hero-buttons">
-                                    <a
-                                        href="booking.html"
-                                        className="btn btn-primary"
-                                    >
-                                        Book Now
-                                    </a>
-                                    <a
-                                        href="rooms.html"
-                                        className="btn btn-outline"
-                                    >
-                                        View Rooms
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-                       
-
-                        <div
-                            className="col-lg-6 d-flex align-items-center justify-content-center"
-                            data-aos="fade-left"
-                            data-aos-delay="300"
-                        >
-                            <div className="hero-images">
-                                <div className="main-image">
-                                    <img
-                                        src="/assets/hotel/showcase-3.webp"
-                                        alt="Luxury Hotel"
-                                        className="img-fluid"
-                                    />
-                                </div>
-                                <div
-                                    className="floating-card"
-                                    data-aos="zoom-in"
-                                    data-aos-delay="400"
-                                >
-                                    <div className="card-content">
-                                        <div className="rating">
-                                            <i className="bi bi-star-fill"></i>
-                                            <i className="bi bi-star-fill"></i>
-                                            <i className="bi bi-star-fill"></i>
-                                            <i className="bi bi-star-fill"></i>
-                                        </div>
-                                        <h6>Exceptional Experience</h6>
-                                        <p>
-                                            "Absolutely stunning hotel! The
-                                            service was impeccable and the views
-                                            breathtaking."
-                                        </p>
-                                        <div className="guest-info">
-                                            <img
-                                                src="assets/img/person/person-f-3.webp"
-                                                alt="Guest"
-                                                className="guest-avatar"
-                                            />
-                                            <span>Sarah Johnson</span>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <div className="hero-stats" data-aos="fade-up">
-                        <div className="row text-center">
-                            <div className="col-md-3 col-6">
-                                <div className="stat-item">
-                                    <span
-                                        className="stat-number purecounter"
-                                        data-purecounter-start="0"
-                                        data-purecounter-end="150"
-                                        data-purecounter-duration="1"
-                                    >
-                                        150
-                                    </span>
-                                    <span className="stat-label">
-                                        Luxury Rooms
-                                    </span>
-                                </div>
-                            </div>
-                            <div className="col-md-3 col-6">
-                                <div className="stat-item">
-                                    <span
-                                        className="stat-number purecounter"
-                                        data-purecounter-start="0"
-                                        data-purecounter-end="5"
-                                        data-purecounter-duration="1"
-                                    >
-                                        5
-                                    </span>
-                                    <span className="stat-label">
-                                        Star Rating
-                                    </span>
-                                </div>
-                            </div>
-                            <div className="col-md-3 col-6">
-                                <div className="stat-item">
-                                    <span
-                                        className="stat-number purecounter"
-                                        data-purecounter-start="0"
-                                        data-purecounter-end="24"
-                                        data-purecounter-duration="1"
-                                    >
-                                        24
-                                    </span>
-                                    <span className="stat-label">
-                                        Hour Service
-                                    </span>
-                                </div>
-                            </div>
-                            <div className="col-md-3 col-6">
-                                <div className="stat-item">
-                                    <span
-                                        className="stat-number purecounter"
-                                        data-purecounter-start="0"
-                                        data-purecounter-end="98"
-                                        data-purecounter-duration="1"
-                                    >
-                                        98
-                                    </span>
-                                    <span className="stat-label">
-                                        Guest Satisfaction
-                                    </span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </section> */}
-
+            {/* 2eme section  */}
             <section
                 id="about-home"
                 className="about-home section light-background"
@@ -384,18 +220,12 @@ export default function Home() {
                                 </div>
 
                                 <div className="about-actions">
-                                    <a
-                                        href="about.html"
-                                        className="btn-primary"
-                                    >
+                                    <Link to="/about" className="btn-primary">
                                         Our Story
-                                    </a>
-                                    <a
-                                        href="rooms.html"
-                                        className="btn-secondary"
-                                    >
+                                    </Link>
+                                    <Link to="/rooms" className="btn-secondary">
                                         View Rooms
-                                    </a>
+                                    </Link>
                                 </div>
                             </div>
                         </div>
@@ -408,14 +238,14 @@ export default function Home() {
                             <div className="about-images">
                                 <div className="main-image">
                                     <img
-                                        src="/assets/hotel/showcase-8.webp"
+                                        src="/assets/images/hotel/showcase-8.webp"
                                         alt="Grandview Resort Main View"
                                         className="img-fluid"
                                     />
                                 </div>
                                 <div className="secondary-image">
                                     <img
-                                        src="/assets/hotel/room-12.webp"
+                                        src="/assets/images/hotel/room-12.webp"
                                         alt="Luxury Suite Interior"
                                         className="img-fluid"
                                     />
@@ -437,6 +267,7 @@ export default function Home() {
                     </div>
                 </div>
             </section>
+            {/* section */}
             <section id="rooms-showcase" className="rooms-showcase section">
                 <div className="container section-title" data-aos="fade-up">
                     <span className="description-title">Rooms</span>
@@ -461,7 +292,7 @@ export default function Home() {
                             <div className="hero-room-showcase">
                                 <div className="showcase-image-container">
                                     <img
-                                        src="/assets/hotel/room-14.webp"
+                                        src="/assets/images/hotel/room-14.webp"
                                         alt="Grand Presidential Suite"
                                         className="img-fluid"
                                     />
@@ -536,7 +367,7 @@ export default function Home() {
                                             </span>
                                         </div>
                                         <a
-                                            href="room-details.html"
+                                            to="room-details.html"
                                             className="primary-booking-btn"
                                         >
                                             Reserve Suite
@@ -555,7 +386,7 @@ export default function Home() {
                                 >
                                     <div className="card-image">
                                         <img
-                                            src="/assets/hotel/room-6.webp"
+                                            src="/assets/images/hotel/room-6.webp"
                                             alt="Executive Room"
                                             className="img-fluid"
                                         />
@@ -585,12 +416,12 @@ export default function Home() {
                                             <div className="price">
                                                 $329<small>/night</small>
                                             </div>
-                                            <a
-                                                href="room-details.html"
+                                            <Link
+                                                to="/room-details"
                                                 className="book-link"
                                             >
                                                 Book
-                                            </a>
+                                            </Link>
                                         </div>
                                     </div>
                                 </div>
@@ -602,7 +433,7 @@ export default function Home() {
                                 >
                                     <div className="card-image">
                                         <img
-                                            src="/assets/hotel/room-19.webp"
+                                            src="/assets/images/hotel/room-19.webp"
                                             alt="Garden View"
                                             className="img-fluid"
                                         />
@@ -632,12 +463,12 @@ export default function Home() {
                                             <div className="price">
                                                 $269<small>/night</small>
                                             </div>
-                                            <a
-                                                href="room-details.html"
+                                            <Link
+                                                to="/room-details"
                                                 className="book-link"
                                             >
                                                 Book
-                                            </a>
+                                            </Link>
                                         </div>
                                     </div>
                                 </div>
@@ -649,7 +480,7 @@ export default function Home() {
                                 >
                                     <div className="card-image">
                                         <img
-                                            src="/assets/hotel/room-12.webp"
+                                            src="/assets/images/hotel/room-12.webp"
                                             alt="Family Suite"
                                             className="img-fluid"
                                         />
@@ -679,12 +510,12 @@ export default function Home() {
                                             <div className="price">
                                                 $419<small>/night</small>
                                             </div>
-                                            <a
-                                                href="room-details.html"
+                                            <Link
+                                                to="/room-details"
                                                 className="book-link"
                                             >
                                                 Book
-                                            </a>
+                                            </Link>
                                         </div>
                                     </div>
                                 </div>
@@ -701,17 +532,17 @@ export default function Home() {
                             <div className="minimal-room-card">
                                 <div className="room-image">
                                     <img
-                                        src="/assets/hotel/room-1.webp"
+                                        src="/assets/images/hotel/room-1.webp"
                                         alt="classNameic Room"
                                         className="img-fluid"
                                     />
                                     <div className="hover-overlay">
-                                        <a
-                                            href="room-details.html"
+                                        <Link
+                                            to="/room-details"
                                             className="view-room"
                                         >
                                             <i className="bi bi-eye"></i>
-                                        </a>
+                                        </Link>
                                     </div>
                                 </div>
                                 <div className="room-summary">
@@ -736,17 +567,17 @@ export default function Home() {
                             <div className="minimal-room-card">
                                 <div className="room-image">
                                     <img
-                                        src="/assets/hotel/room-5.webp"
+                                        src="/assets/images/hotel/room-5.webp"
                                         alt="Superior Room"
                                         className="img-fluid"
                                     />
                                     <div className="hover-overlay">
-                                        <a
-                                            href="room-details.html"
+                                        <Link
+                                            to="/room-details"
                                             className="view-room"
                                         >
                                             <i className="bi bi-eye"></i>
-                                        </a>
+                                        </Link>
                                     </div>
                                 </div>
                                 <div className="room-summary">
@@ -771,17 +602,17 @@ export default function Home() {
                             <div className="minimal-room-card">
                                 <div className="room-image">
                                     <img
-                                        src="/assets/hotel/room-8.webp"
+                                        src="/assets/images/hotel/room-8.webp"
                                         alt="Premium Room"
                                         className="img-fluid"
                                     />
                                     <div className="hover-overlay">
-                                        <a
-                                            href="room-details.html"
+                                        <Link
+                                            to="/room-details"
                                             className="view-room"
                                         >
                                             <i className="bi bi-eye"></i>
-                                        </a>
+                                        </Link>
                                     </div>
                                 </div>
                                 <div className="room-summary">
@@ -806,17 +637,17 @@ export default function Home() {
                             <div className="minimal-room-card">
                                 <div className="room-image">
                                     <img
-                                        src="/assets/hotel/room-17.webp"
+                                        src="/assets/images/hotel/room-17.webp"
                                         alt="Luxury Suite"
                                         className="img-fluid"
                                     />
                                     <div className="hover-overlay">
-                                        <a
-                                            href="room-details.html"
+                                        <Link
+                                            to="/room-details"
                                             className="view-room"
                                         >
                                             <i className="bi bi-eye"></i>
-                                        </a>
+                                        </Link>
                                     </div>
                                 </div>
                                 <div className="room-summary">
@@ -839,10 +670,10 @@ export default function Home() {
                         data-aos="fade-up"
                         data-aos-delay="600"
                     >
-                        <a href="rooms.html" className="explore-all-link">
+                        <Link to="/rooms" className="explore-all-link">
                             <span>Explore All Accommodations</span>
                             <i className="bi bi-arrow-right"></i>
-                        </a>
+                        </Link>
                     </div>
                 </div>
             </section>
@@ -870,7 +701,7 @@ export default function Home() {
                             <div className="facility-card">
                                 <div className="facility-image">
                                     <img
-                                        src="/assets/hotel/amenties.jpg"
+                                        src="/assets/images/hotel/amenties.jpg"
                                         alt="Wireless Internet"
                                         className="img-fluid"
                                     />
@@ -909,7 +740,7 @@ export default function Home() {
                             <div className="facility-card">
                                 <div className="facility-image">
                                     <img
-                                        src="/assets/hotel/amenities-1.webp"
+                                        src="/assets/images/hotel/amenities-1.webp"
                                         alt="Swimming Pool"
                                         className="img-fluid"
                                     />
@@ -948,7 +779,7 @@ export default function Home() {
                             <div className="facility-card">
                                 <div className="facility-image">
                                     <img
-                                        src="/assets/hotel/amenities.jpg"
+                                        src="/assets/images/hotel/amenities.jpg"
                                         alt="Valet Parking"
                                         className="img-fluid"
                                     />
@@ -987,7 +818,7 @@ export default function Home() {
                             <div className="facility-card">
                                 <div className="facility-image">
                                     <img
-                                        src="/assets/hotel/amenties-9.jpg"
+                                        src="/assets/images/hotel/amenties-9.jpg"
                                         alt="Fitness Center"
                                         className="img-fluid"
                                     />
@@ -1026,7 +857,7 @@ export default function Home() {
                             <div className="facility-card">
                                 <div className="facility-image">
                                     <img
-                                        src="/assets/hotel/dining-2.webp"
+                                        src="/assets/images/hotel/dining-2.webp"
                                         alt="Fine Dining"
                                         className="img-fluid"
                                     />
@@ -1065,7 +896,7 @@ export default function Home() {
                             <div className="facility-card">
                                 <div className="facility-image">
                                     <img
-                                        src="/assets/hotel/amenities-4.webp"
+                                        src="/assets/images/hotel/amenities-4.webp"
                                         alt="Spa Services"
                                         className="img-fluid"
                                     />
@@ -1098,6 +929,7 @@ export default function Home() {
                     </div>
                 </div>
             </section>
+            {/* section testimonials */}
             <section
                 id="testimonials"
                 className="testimonials section light-background"
@@ -1139,7 +971,7 @@ export default function Home() {
                                     </div>
                                     <div className="testimonial-author">
                                         <img
-                                            src="/assets/person/person-m-5.webp"
+                                            src="/assets/images/person/person-m-5.webp"
                                             alt="Client"
                                             className="img-fluid rounded-circle"
                                             loading="lazy"
@@ -1172,7 +1004,7 @@ export default function Home() {
                                     </div>
                                     <div className="testimonial-author">
                                         <img
-                                            src="/assets/person/person-f-7.webp"
+                                            src="/assets/images/person/person-f-7.webp"
                                             alt="Client"
                                             className="img-fluid rounded-circle"
                                             loading="lazy"
@@ -1204,7 +1036,7 @@ export default function Home() {
                                     </div>
                                     <div className="testimonial-author">
                                         <img
-                                            src="/assets/person/person-m-9.webp"
+                                            src="/assets/images/person/person-m-9.webp"
                                             alt="Client"
                                             className="img-fluid rounded-circle"
                                             loading="lazy"
@@ -1236,7 +1068,7 @@ export default function Home() {
                                     </div>
                                     <div className="testimonial-author">
                                         <img
-                                            src="/assets/person/person-f-3.webp"
+                                            src="/assets/images/person/person-f-3.webp"
                                             alt="Client"
                                             className="img-fluid rounded-circle"
                                             loading="lazy"
@@ -1252,6 +1084,7 @@ export default function Home() {
                     </div>
                 </div>
             </section>
+            {/*  section offers */}
             <section id="offer-cards" className="offer-cards section">
                 <div className="container section-title" data-aos="fade-up">
                     <span className="description-title">Offers</span>
@@ -1279,7 +1112,7 @@ export default function Home() {
                                 </div>
                                 <div className="offer-image">
                                     <img
-                                        src="/assets/hotel/showcase-3.webp"
+                                        src="/assets/images/hotel/showcase-3.webp"
                                         alt="Weekend Getaway"
                                         className="img-fluid"
                                     />
@@ -1310,9 +1143,9 @@ export default function Home() {
                                             </span>
                                         </div>
                                     </div>
-                                    <a href="#" className="btn-book">
+                                    <Link to="#" className="btn-book">
                                         Book Now
-                                    </a>
+                                    </Link>
                                 </div>
                             </div>
                         </div>
@@ -1328,7 +1161,7 @@ export default function Home() {
                                 </div>
                                 <div className="offer-image">
                                     <img
-                                        src="/assets/hotel/showcase-7.webp"
+                                        src="/assets/images/hotel/showcase-7.webp"
                                         alt="Extended Stay Deal"
                                         className="img-fluid"
                                     />
@@ -1358,7 +1191,7 @@ export default function Home() {
                                             <span>Book by Jan 15, 2025</span>
                                         </div>
                                     </div>
-                                    <a href="#" className="btn-book">
+                                    <a to="#" className="btn-book">
                                         Reserve Today
                                     </a>
                                 </div>
@@ -1376,7 +1209,7 @@ export default function Home() {
                                 </div>
                                 <div className="offer-image">
                                     <img
-                                        src="/assets/hotel/showcase-11.webp"
+                                        src="/assets/images/hotel/showcase-11.webp"
                                         alt="Advance Booking"
                                         className="img-fluid"
                                     />
@@ -1406,9 +1239,9 @@ export default function Home() {
                                             <span>Available year-round</span>
                                         </div>
                                     </div>
-                                    <a href="#" className="btn-book">
+                                    <Link to="#" className="btn-book">
                                         Book Early
-                                    </a>
+                                    </Link>
                                 </div>
                             </div>
                         </div>
@@ -1454,9 +1287,9 @@ export default function Home() {
                                                     <label>Minutes</label>
                                                 </div>
                                             </div>
-                                            <a href="#" className="btn-cta">
+                                            <Link to="#" className="btn-cta">
                                                 Claim Offer
-                                            </a>
+                                            </Link>
                                         </div>
                                     </div>
                                 </div>
@@ -1465,6 +1298,7 @@ export default function Home() {
                     </div>
                 </div>
             </section>
+            {/*  section call to action */}
             <section
                 id="call-to-action"
                 className="call-to-action section light-background"
@@ -1510,12 +1344,12 @@ export default function Home() {
                                     </li>
                                 </ul>
                                 <div className="cta-buttons">
-                                    <a href="#" className="btn-primary">
+                                    <Link to="#" className="btn-primary">
                                         Book Your Stay
-                                    </a>
-                                    <a href="#" className="btn-secondary">
+                                    </Link>
+                                    <Link to="#" className="btn-secondary">
                                         View Rooms
-                                    </a>
+                                    </Link>
                                 </div>
                             </div>
                         </div>
@@ -1527,7 +1361,7 @@ export default function Home() {
                         >
                             <div className="image-wrapper">
                                 <img
-                                    src="/assets/hotel/showcase-9.webp"
+                                    src="/assets/images/hotel/showcase-9.webp"
                                     alt="Luxury Hotel Experience"
                                     className="img-fluid"
                                 />
@@ -1546,6 +1380,7 @@ export default function Home() {
                     </div>
                 </div>
             </section>
+            {/*  section events */}
             <section id="events-cards" className="events-cards section">
                 <div className="container section-title" data-aos="fade-up">
                     <span className="description-title">Events</span>
@@ -1573,7 +1408,7 @@ export default function Home() {
                                         <i className="bi bi-heart-fill"></i>
                                     </div>
                                     <img
-                                        src="/assets/hotel/event-1.webp"
+                                        src="/assets/images/hotel/event-1.webp"
                                         alt="Wedding Celebrations"
                                         className="img-fluid"
                                     />
@@ -1594,13 +1429,13 @@ export default function Home() {
                                             Full Catering
                                         </span>
                                     </div>
-                                    <a
-                                        href="hotel-events.html"
+                                    <Link
+                                        to="/hotel-events"
                                         className="event-link"
                                     >
                                         Explore Details{" "}
                                         <i className="bi bi-arrow-right"></i>
-                                    </a>
+                                    </Link>
                                 </div>
                             </div>
                         </div>
@@ -1616,7 +1451,7 @@ export default function Home() {
                                         <i className="bi bi-building"></i>
                                     </div>
                                     <img
-                                        src="/assets/hotel/event-4.webp"
+                                        src="/assets/images/hotel/event-4.webp"
                                         alt="Business Conferences"
                                         className="img-fluid"
                                     />
@@ -1637,13 +1472,13 @@ export default function Home() {
                                             WiFi Access
                                         </span>
                                     </div>
-                                    <a
-                                        href="hotel-events.html"
+                                    <Link
+                                        to="/hotel-events"
                                         className="event-link"
                                     >
                                         Explore Details{" "}
                                         <i className="bi bi-arrow-right"></i>
-                                    </a>
+                                    </Link>
                                 </div>
                             </div>
                         </div>
@@ -1659,7 +1494,7 @@ export default function Home() {
                                         <i className="bi bi-calendar-event"></i>
                                     </div>
                                     <img
-                                        src="assets/img/hotel/event-8.webp"
+                                        src="assets/images/hotel/event-8.webp"
                                         alt="Special Occasions"
                                         className="img-fluid"
                                     />
@@ -1680,13 +1515,13 @@ export default function Home() {
                                             Event Coordination
                                         </span>
                                     </div>
-                                    <a
-                                        href="hotel-events.html"
+                                    <Link
+                                        to="/hotel-events"
                                         className="event-link"
                                     >
                                         Explore Details{" "}
                                         <i className="bi bi-arrow-right"></i>
-                                    </a>
+                                    </Link>
                                 </div>
                             </div>
                         </div>
@@ -1702,7 +1537,7 @@ export default function Home() {
                                         <i className="bi bi-people"></i>
                                     </div>
                                     <img
-                                        src="/assets/hotel/event-5.webp"
+                                        src="/assets/images/hotel/event-5.webp"
                                         alt="Corporate Retreats"
                                         className="img-fluid"
                                     />
@@ -1723,13 +1558,13 @@ export default function Home() {
                                             Outdoor Activities
                                         </span>
                                     </div>
-                                    <a
-                                        href="hotel-events.html"
+                                    <Link
+                                        to="hotel-events"
                                         className="event-link"
                                     >
                                         Explore Details{" "}
                                         <i className="bi bi-arrow-right"></i>
-                                    </a>
+                                    </Link>
                                 </div>
                             </div>
                         </div>
@@ -1745,7 +1580,7 @@ export default function Home() {
                                         <i className="bi bi-music-note-beamed"></i>
                                     </div>
                                     <img
-                                        src="assets/img/hotel/event-6.webp"
+                                        src="assets/images/hotel/event-6.webp"
                                         alt="Entertainment Events"
                                         className="img-fluid"
                                     />
@@ -1766,13 +1601,13 @@ export default function Home() {
                                             Dance Floor
                                         </span>
                                     </div>
-                                    <a
-                                        href="hotel-events.html"
+                                    <Link
+                                        to="/hotel-events"
                                         className="event-link"
                                     >
                                         Explore Details{" "}
                                         <i className="bi bi-arrow-right"></i>
-                                    </a>
+                                    </Link>
                                 </div>
                             </div>
                         </div>
@@ -1788,7 +1623,7 @@ export default function Home() {
                                         <i className="bi bi-star"></i>
                                     </div>
                                     <img
-                                        src="assets/img/hotel/event-9.webp"
+                                        src="assets/images/hotel/event-9.webp"
                                         alt="VIP Gatherings"
                                         className="img-fluid"
                                     />
@@ -1809,19 +1644,20 @@ export default function Home() {
                                             Premium Service
                                         </span>
                                     </div>
-                                    <a
-                                        href="hotel-events.html"
+                                    <Link
+                                        to="/hotel-events"
                                         className="event-link"
                                     >
                                         Explore Details{" "}
                                         <i className="bi bi-arrow-right"></i>
-                                    </a>
+                                    </Link>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
             </section>
+            {/*  section location */}
             <section id="location-cards" className="location-cards section">
                 <div className="container section-title" data-aos="fade-up">
                     <span className="description-title">
@@ -1850,7 +1686,7 @@ export default function Home() {
                                     <div className="area-highlight">
                                         <div className="area-image-wrapper">
                                             <img
-                                                src="assets/img/hotel/location-3.webp"
+                                                src="assets/images/hotel/location-3.webp"
                                                 alt="Entertainment District"
                                                 className="img-fluid"
                                             />
@@ -1889,7 +1725,7 @@ export default function Home() {
                                     <div className="area-highlight">
                                         <div className="area-image-wrapper">
                                             <img
-                                                src="assets/img/hotel/location-6.webp"
+                                                src="assets/images/hotel/location-6.webp"
                                                 alt="Waterfront Marina"
                                                 className="img-fluid"
                                             />
@@ -1927,7 +1763,7 @@ export default function Home() {
                                     <div className="area-highlight">
                                         <div className="area-image-wrapper">
                                             <img
-                                                src="assets/img/hotel/location-8.webp"
+                                                src="assets/images//hotel/location-8.webp"
                                                 alt="Historic Quarter"
                                                 className="img-fluid"
                                             />
@@ -1966,7 +1802,7 @@ export default function Home() {
                                     <div className="area-highlight">
                                         <div className="area-image-wrapper">
                                             <img
-                                                src="assets/img/hotel/location-4.webp"
+                                                src="assets/images/hotel/location-4.webp"
                                                 alt="Shopping Plaza"
                                                 className="img-fluid"
                                             />
@@ -2065,18 +1901,19 @@ export default function Home() {
                                     </div>
                                 </div>
 
-                                <a
-                                    href="location.html"
+                                <Link
+                                    to="/location"
                                     className="location-guide-btn"
                                 >
                                     <span>View Full Location Guide</span>
                                     <i className="bi bi-arrow-right"></i>
-                                </a>
+                                </Link>
                             </div>
                         </div>
                     </div>
                 </div>
             </section>
+            {/*  section gallery */}
             <section id="gallery-showcase" className="gallery-showcase section">
                 <div
                     className="container"
@@ -2088,47 +1925,17 @@ export default function Home() {
                         data-aos="fade-up"
                         data-aos-delay="200"
                     >
-                        {/* <script type="application/json" className="swiper-config">
-            {
-              "loop": true,
-              "speed": 600,
-              "autoplay": {
-                "delay": 3000
-              },
-              "slidesPerView": 1,
-              "spaceBetween": 20,
-              "centeredSlides": true,
-              "breakpoints": {
-                "576": {
-                  "slidesPerView": 2,
-                  "centeredSlides": false
-                },
-                "768": {
-                  "slidesPerView": 3,
-                  "centeredSlides": false
-                },
-                "992": {
-                  "slidesPerView": 4,
-                  "centeredSlides": false
-                },
-                "1200": {
-                  "slidesPerView": 5,
-                  "centeredSlides": false
-                }
-              }
-            }
-          </script> */}
                         <div className="swiper-wrapper">
                             <div className="swiper-slide">
                                 <div className="gallery-item">
                                     <img
-                                        src="assets/img/hotel/gallery-1.webp"
+                                        src="assets/images/hotel/gallery-1.webp"
                                         alt="Luxurious Suite"
                                         className="img-fluid"
                                         loading="lazy"
                                     />
                                     <a
-                                        href="assets/img/hotel/gallery-1.webp"
+                                        href="assets/images/img/hotel/gallery-1.webp"
                                         className="gallery-overlay glightbox"
                                     >
                                         <i className="bi bi-eye"></i>
@@ -2138,13 +1945,13 @@ export default function Home() {
                             <div className="swiper-slide">
                                 <div className="gallery-item">
                                     <img
-                                        src="assets/img/hotel/gallery-5.webp"
+                                        src="assets/images/img/hotel/gallery-5.webp"
                                         alt="Modern Lobby"
                                         className="img-fluid"
                                         loading="lazy"
                                     />
                                     <a
-                                        href="assets/img/hotel/gallery-5.webp"
+                                        href="assets/images/img/hotel/gallery-5.webp"
                                         className="gallery-overlay glightbox"
                                     >
                                         <i className="bi bi-eye"></i>
@@ -2154,13 +1961,13 @@ export default function Home() {
                             <div className="swiper-slide">
                                 <div className="gallery-item">
                                     <img
-                                        src="assets/img/hotel/gallery-12.webp"
+                                        src="assets/images/img/hotel/gallery-12.webp"
                                         alt="Elegant Dining Area"
                                         className="img-fluid"
                                         loading="lazy"
                                     />
                                     <a
-                                        href="assets/img/hotel/gallery-12.webp"
+                                        href="assets/images/img/hotel/gallery-12.webp"
                                         className="gallery-overlay glightbox"
                                     >
                                         <i className="bi bi-eye"></i>
@@ -2170,13 +1977,13 @@ export default function Home() {
                             <div className="swiper-slide">
                                 <div className="gallery-item">
                                     <img
-                                        src="assets/img/hotel/gallery-8.webp"
+                                        src="assets/images/img/hotel/gallery-8.webp"
                                         alt="Grand Ballroom Setup"
                                         className="img-fluid"
                                         loading="lazy"
                                     />
                                     <a
-                                        href="assets/img/hotel/gallery-8.webp"
+                                        href="assets/images/img/hotel/gallery-8.webp"
                                         className="gallery-overlay glightbox"
                                     >
                                         <i className="bi bi-eye"></i>
@@ -2186,13 +1993,13 @@ export default function Home() {
                             <div className="swiper-slide">
                                 <div className="gallery-item">
                                     <img
-                                        src="assets/img/hotel/gallery-15.webp"
+                                        src="assets/images/img/hotel/gallery-15.webp"
                                         alt="Relaxing Poolside"
                                         className="img-fluid"
                                         loading="lazy"
                                     />
                                     <a
-                                        href="assets/img/hotel/gallery-15.webp"
+                                        href="assets/images/img/hotel/gallery-15.webp"
                                         className="gallery-overlay glightbox"
                                     >
                                         <i className="bi bi-eye"></i>
@@ -2202,13 +2009,13 @@ export default function Home() {
                             <div className="swiper-slide">
                                 <div className="gallery-item">
                                     <img
-                                        src="assets/img/hotel/gallery-3.webp"
+                                        src="assets/images/img/hotel/gallery-3.webp"
                                         alt="Cozy Guest Room"
                                         className="img-fluid"
                                         loading="lazy"
                                     />
                                     <a
-                                        href="assets/img/hotel/gallery-3.webp"
+                                        href="assets/images/img/hotel/gallery-3.webp"
                                         className="gallery-overlay glightbox"
                                     >
                                         <i className="bi bi-eye"></i>
@@ -2218,7 +2025,7 @@ export default function Home() {
                             <div className="swiper-slide">
                                 <div className="gallery-item">
                                     <img
-                                        src="assets/img/hotel/gallery-18.webp"
+                                        src="assets/images/img/hotel/gallery-18.webp"
                                         alt="Spa and Wellness Center"
                                         className="img-fluid"
                                         loading="lazy"
@@ -2234,7 +2041,7 @@ export default function Home() {
                             <div className="swiper-slide">
                                 <div className="gallery-item">
                                     <img
-                                        src="assets/img/hotel/gallery-7.webp"
+                                        src="assets/images/img/hotel/gallery-7.webp"
                                         alt="Conference Facilities"
                                         className="img-fluid"
                                         loading="lazy"
@@ -2255,10 +2062,10 @@ export default function Home() {
                         data-aos="fade-up"
                         data-aos-delay="300"
                     >
-                        <a href="gallery.html" className="btn btn-gallery">
-                            <i className="bi bi-collection me-2"></i>Discover
-                            Our Full Gallery
-                        </a>
+                        <Link to="/gallery" className="btn btn-gallery">
+                            <i className="bi bi-collection me-2"></i>
+                            Discover Our Full Gallery
+                        </Link>
                     </div>
                 </div>
             </section>
