@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { Routes, Route } from "react-router-dom";
 import Layout from "./components/Layout/Layout";
 import Home from "./pages/Home";
@@ -14,8 +14,13 @@ import CreateRoom from "./admin/rooms/CreateRoom";
 import EditRoom from "./admin/rooms/EditRoom";
 import AdminRooms from "./admin/rooms/AdminRooms";
 import Dashboard from "./admin/screen/RoomListScreen";
-
+//
+import AOS from "aos";
+import "aos/dist/aos.css";
 const App = () => {
+    useEffect(() => {
+        AOS.init({ duration: 1000, once: true });
+    }, []);
     return (
         <>
             <Layout>

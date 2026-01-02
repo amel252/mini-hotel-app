@@ -1,96 +1,96 @@
+@use "./sections/_hotel-hero";
+@use "./sections/_about-home";
+@use "./sections/_rooms-showcase";
+@use "./sections/_amenities-cards";
+@use "./sections/_testimonials";
+@use "./sections/_offer-cards";
+@use "./sections/_call-to-action";
+@use "./sections/_events-cards";
+@use "./sections/_location-cards";
+@use "./sections/_gallery-showcase";
+@use "./sections/_about";
+@use "./sections/_rooms-2";
+@use "./sections/_room-details";
+@use "./sections/_amenities";
+@use "./sections/_offers";
+@use "./sections/_restaurant";
+@use "./sections/_menu";
+@use "./sections/_booking";
+@use "./sections/_gallery";
+@use "./sections/_events";
+@use "./sections/_hotel-location";
+@use "./sections/_contact.scss";
+@use "./sections/_terms-of-service";
+@use "./sections/_privacy";
+@use "./sections/_error-404";
+@use "./sections/_starter-section";
+
 /*--------------------------------------------------------------
+
 # Global Sections
 --------------------------------------------------------------*/
 section,
 .section {
-  color: var(--default-color);
-  background-color: var(--background-color);
-  padding: 60px 0;
-  scroll-margin-top: 90px;
-  overflow: clip;
+    color: var(--default-color);
+    background-color: var(--background-color);
+    padding: 60px 0;
+    scroll-margin-top: 90px;
+    overflow: clip;
 }
 
 @media (max-width: 1199px) {
-
-  section,
-  .section {
-    scroll-margin-top: 66px;
-  }
+    section,
+    .section {
+        scroll-margin-top: 66px;
+    }
 }
 
 /*--------------------------------------------------------------
 # Global Section Titles
 --------------------------------------------------------------*/
 .section-title {
-  text-align: center;
-  padding: 30px 0;
-  margin-bottom: 30px;
-  position: relative;
-
-  h2 {
-    font-size: 32px;
-    font-weight: 700;
-    text-transform: uppercase;
-    margin-bottom: 20px;
-    padding-bottom: 0;
+    text-align: center;
+    padding: 30px 0;
+    margin-bottom: 30px;
     position: relative;
-    z-index: 2;
-  }
 
-  span {
-    position: absolute;
-    top: 4px;
-    color: color-mix(in srgb, var(--heading-color), transparent 95%);
-    left: 0;
-    right: 0;
-    z-index: 1;
-    font-weight: 700;
-    font-size: 52px;
-    text-transform: uppercase;
-    line-height: 1;
-  }
-
-  p {
-    margin-bottom: 0;
-    position: relative;
-    z-index: 2;
-  }
-
-  @media (max-width: 575px) {
     h2 {
-      font-size: 28px;
-      margin-bottom: 15px;
+        font-size: 32px;
+        font-weight: 700;
+        text-transform: uppercase;
+        margin-bottom: 20px;
+        padding-bottom: 0;
+        position: relative;
+        z-index: 2;
     }
 
     span {
-      font-size: 38px;
+        position: absolute;
+        top: 4px;
+        color: color-mix(in srgb, var(--heading-color), transparent 95%);
+        left: 0;
+        right: 0;
+        z-index: 1;
+        font-weight: 700;
+        font-size: 52px;
+        text-transform: uppercase;
+        line-height: 1;
     }
-  }
-}
 
-@import './sections/_hotel-hero.scss';
-@import './sections/_about-home.scss';
-@import './sections/_rooms-showcase.scss';
-@import './sections/_amenities-cards.scss';
-@import './sections/_testimonials.scss';
-@import './sections/_offer-cards.scss';
-@import './sections/_call-to-action.scss';
-@import './sections/_events-cards.scss';
-@import './sections/_location-cards.scss';
-@import './sections/_gallery-showcase.scss';
-@import './sections/_about.scss';
-@import './sections/_rooms-2.scss';
-@import './sections/_room-details.scss';
-@import './sections/_amenities.scss';
-@import './sections/_offers.scss';
-@import './sections/_restaurant.scss';
-@import './sections/_menu.scss';
-@import './sections/_booking.scss';
-@import './sections/_gallery.scss';
-@import './sections/_events.scss';
-@import './sections/_hotel-location.scss';
-@import './sections/_contact.scss';
-@import './sections/_terms-of-service.scss';
-@import './sections/_privacy.scss';
-@import './sections/_error-404.scss';
-@import './sections/_starter-section.scss';
+    p {
+        margin-bottom: 0;
+        position: relative;
+        z-index: 2;
+    }
+
+    @media (max-width: 575px) {
+        h2 {
+            font-size: 28px;
+            margin-bottom: 15px;
+        }
+
+        span {
+            font-size: 38px;
+        }
+    }
+}
