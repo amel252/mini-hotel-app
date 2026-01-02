@@ -11,6 +11,7 @@ import "bootstrap-icons/font/bootstrap-icons.css"; //  bootstrap icons
 import "./style/scss/main.css"; // ton CSS template
 import "aos/dist/aos.css"; // AOS
 import "glightbox/dist/css/glightbox.css"; // GLightbox
+// swiper
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";

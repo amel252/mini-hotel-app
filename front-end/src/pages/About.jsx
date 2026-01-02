@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 export default function About() {
     return (
@@ -10,7 +11,7 @@ export default function About() {
                     <nav className="breadcrumbs">
                         <ol>
                             <li>
-                                <a href="index.html">Home</a>
+                                <Link to="/">Home</Link>
                             </li>
                             <li className="current">About</li>
                         </ol>
@@ -35,7 +36,7 @@ export default function About() {
                                     data-aos-delay="200"
                                 >
                                     <img
-                                        src="assets/img/hotel/showcase-9.webp"
+                                        src="assets/images//hotel/showcase-9.webp"
                                         alt="Hotel Exterior"
                                         className="img-fluid main-image"
                                     />
@@ -57,7 +58,7 @@ export default function About() {
                                     data-aos-delay="300"
                                 >
                                     <img
-                                        src="assets/img/hotel/room-8.webp"
+                                        src="assets/images/hotel/room-8.webp"
                                         alt="Luxury Suite"
                                         className="img-fluid"
                                     />
@@ -148,10 +149,10 @@ export default function About() {
                                 </div>
 
                                 <div className="action-buttons">
-                                    <a href="#" className="btn-explore">
+                                    <Link to="#" className="btn-explore">
                                         <i className="bi bi-compass"></i>
                                         Explore Our Heritage
-                                    </a>
+                                    </Link>
                                     <a
                                         href="https://www.youtube.com/watch?v=Y7f98aduVJ8"
                                         className="btn-video glightbox"
@@ -189,7 +190,7 @@ export default function About() {
                             >
                                 <div className="feature-visual">
                                     <img
-                                        src="assets/img/hotel/amenities-3.webp"
+                                        src="assets/images/hotel/amenities-3.webp"
                                         alt="Spa Services"
                                         className="img-fluid"
                                     />
@@ -216,7 +217,7 @@ export default function About() {
                             >
                                 <div className="feature-visual">
                                     <img
-                                        src="assets/img/hotel/dining-4.webp"
+                                        src="assets/images/hotel/dining-4.webp"
                                         alt="Fine Dining"
                                         className="img-fluid"
                                     />
@@ -243,7 +244,7 @@ export default function About() {
                             >
                                 <div className="feature-visual">
                                     <img
-                                        src="assets/img/hotel/location-2.webp"
+                                        src="assets/images/hotel/location-2.webp"
                                         alt="Prime Location"
                                         className="img-fluid"
                                     />
@@ -358,7 +359,7 @@ export default function About() {
                             <div className="hero-room-showcase">
                                 <div className="showcase-image-container">
                                     <img
-                                        src="assets/img/hotel/room-14.webp"
+                                        src="assets/images/hotel/room-14.webp"
                                         alt="Grand Presidential Suite"
                                         className="img-fluid"
                                     />
@@ -453,7 +454,7 @@ export default function About() {
                                 >
                                     <div className="card-image">
                                         <img
-                                            src="assets/img/hotel/room-6.webp"
+                                            src="assets/images/hotel/room-6.webp"
                                             alt="Executive Room"
                                             className="img-fluid"
                                         />
@@ -501,7 +502,7 @@ export default function About() {
                                 >
                                     <div className="card-image">
                                         <img
-                                            src="assets/img/hotel/room-19.webp"
+                                            src="assets/images/hotel/room-19.webp"
                                             alt="Garden View"
                                             className="img-fluid"
                                         />
@@ -549,7 +550,7 @@ export default function About() {
                                 >
                                     <div className="card-image">
                                         <img
-                                            src="assets/img/hotel/room-12.webp"
+                                            src="assets/images/hotel/room-12.webp"
                                             alt="Family Suite"
                                             className="img-fluid"
                                         />
@@ -602,7 +603,7 @@ export default function About() {
                             <div className="minimal-room-card">
                                 <div className="room-image">
                                     <img
-                                        src="assets/img/hotel/room-1.webp"
+                                        src="assets/images/hotel/room-1.webp"
                                         alt="classNameic Room"
                                         className="img-fluid"
                                     />
@@ -638,7 +639,7 @@ export default function About() {
                             <div className="minimal-room-card">
                                 <div className="room-image">
                                     <img
-                                        src="assets/img/hotel/room-5.webp"
+                                        src="assets/images/hotel/room-5.webp"
                                         alt="Superior Room"
                                         className="img-fluid"
                                     />
@@ -674,17 +675,17 @@ export default function About() {
                             <div className="minimal-room-card">
                                 <div className="room-image">
                                     <img
-                                        src="assets/img/hotel/room-8.webp"
+                                        src="assets/images/hotel/room-8.webp"
                                         alt="Premium Room"
                                         className="img-fluid"
                                     />
                                     <div className="hover-overlay">
-                                        <a
-                                            href="room-details.html"
+                                        <Link
+                                            to="/room-details"
                                             className="view-room"
                                         >
                                             <i className="bi bi-eye"></i>
-                                        </a>
+                                        </Link>
                                     </div>
                                 </div>
                                 <div className="room-summary">
@@ -710,7 +711,7 @@ export default function About() {
                             <div className="minimal-room-card">
                                 <div className="room-image">
                                     <img
-                                        src="assets/img/hotel/room-17.webp"
+                                        src="assets/images/hotel/room-17.webp"
                                         alt="Luxury Suite"
                                         className="img-fluid"
                                     />
@@ -744,10 +745,10 @@ export default function About() {
                         data-aos="fade-up"
                         data-aos-delay="600"
                     >
-                        <a href="rooms.html" className="explore-all-link">
+                        <Link to="/rooms" className="explore-all-link">
                             <span>Explore All Accommodations</span>
                             <i className="bi bi-arrow-right"></i>
-                        </a>
+                        </Link>
                     </div>
                 </div>
             </section>
