@@ -35,6 +35,16 @@ const roomSchema = new mongoose.Schema(
             type: String,
             required: true,
         },
+        rating: {
+            type: Number,
+            default: 0,
+            min: 0,
+            max: 5,
+        },
+        numOfReviews: {
+            type: Number,
+            default: 0,
+        },
     },
     {
         timestamps: true, // crée createdAt et updatedAt automatiquement

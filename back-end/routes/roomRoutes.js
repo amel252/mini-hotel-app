@@ -5,6 +5,7 @@ import {
     getRoomById,
     updateRoom,
     deleteRoom,
+    createRoomReview,
 } from "../controllers/roomController.js";
 import { catchErrors } from "../helpers.js";
 
@@ -17,5 +18,7 @@ router.get("/:id", catchErrors(getRoomById)); // GET /api/rooms/:id
 router.patch("/:id", catchErrors(updateRoom)); // PATCH /api/rooms/:id
 router.put("/:id", catchErrors(updateRoom)); // PUT /api/rooms/:id
 router.delete("/:id", catchErrors(deleteRoom)); // DELETE /api/rooms/:id
+//  review
+router.put("/:id/rating", catchErrors(createRoomReview));
 
 export default router;

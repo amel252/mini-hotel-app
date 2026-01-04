@@ -45,3 +45,32 @@ export const deleteRoom = async (req, res) => {
     // si ok envoie la réponse
     res.status(200).send("chambre est supprimé ");
 };
+
+//  create a review
+export const createRoomReview = async (req, res) => {
+    try {
+        const { rating } = req.body; // note envoyée (1 à 5)
+        if (rating < 1 || rating > 5) {
+            return res.status(400).json({ message: "Invalid rating" });
+        }
+        const room = await RoomModel.findById(req.params.id);
+
+        if (!room) {
+            return res.status(404).json({ message: "Room not found" });
+        }
+
+        // Calcul de la nouvelle moyenne
+        const totalRating = room.rating * room.numOfReviews + rating;
+
+        room.numOfReviews += 1;
+        room.rating = Number((totalRating / room.numOfReviews).toFixed(1));
+        await room.save();
+
+        res.json({
+            rating: room.rating,
+            numOfReviews: room.numOfReviews,
+        });
+    } catch (error) {
+        res.status(500).json({ message: error.message });
+    }
+};
