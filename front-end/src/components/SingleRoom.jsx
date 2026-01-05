@@ -33,6 +33,15 @@ const SingleRoom = () => {
     if (error) return <p>Erreur : {error}</p>;
     if (!room) return <p>Chambre introuvable</p>;
 
+    // Préparer les images pour la galerie
+    const defaultImages = [
+        "/assets/images/hotel/room-12.webp",
+        "/assets/images/hotel/room-8.webp",
+        "/assets/images/hotel/room-6.webp",
+        "/assets/images/hotel/room-17.webp",
+    ];
+    const validPhotos = room.photos?.filter(Boolean) || [];
+    const galleryImages = [...validPhotos, ...defaultImages].slice(0, 5);
     return (
         // <!-- Room Details Section -->
         <section id="room-details" className="room-details section">
@@ -46,8 +55,8 @@ const SingleRoom = () => {
                     >
                         <div className="room-header-image">
                             <img
-                                src="assets/img/hotel/room-15.webp"
-                                alt="Deluxe Ocean View Suite"
+                                src={room.photos[0]}
+                                alt={room.name}
                                 className="img-fluid rounded"
                             />
                             <div className="room-badge">
@@ -74,29 +83,26 @@ const SingleRoom = () => {
                                     ({room.numOfReviews || 0} reviews )
                                 </span>
                             </div>
-                            <h1 className="room-title">
-                                Deluxe Ocean View Suite
-                            </h1>
-                            <p className="room-tagline">
-                                Experience luxury with breathtaking ocean views
-                                and premium amenities
-                            </p>
+                            <h1 className={"room-title"}>{room.name}</h1>
+                            <p className="room-tagline">{room.description}</p>
                             <div className="room-capacity mb-4">
                                 <div className="capacity-item">
                                     <i className="bi bi-people"></i>
-                                    <span>Up to 4 guests</span>
+                                    <span>Up to {room.maxPersons} guests</span>
                                 </div>
                                 <div className="capacity-item">
                                     <i className="bi bi-grid"></i>
-                                    <span>850 sq ft</span>
+                                    <span>{room.surfaceArea}m²</span>
                                 </div>
                                 <div className="capacity-item">
                                     <i className="bi bi-bed"></i>
-                                    <span>King bed + Sofa bed</span>
+                                    <span>{room.Advantages}</span>
                                 </div>
                             </div>
                             <div className="room-price">
-                                <span className="price-amount">$395</span>
+                                <span className="price-amount">
+                                    {room.price}
+                                </span>
                                 <span className="price-period">per night</span>
                             </div>
                             <a href="booking.html" className="btn btn-book-now">
@@ -105,7 +111,6 @@ const SingleRoom = () => {
                         </div>
                     </div>
                 </div>
-
                 {/* <!-- Room Gallery --> */}
                 <div
                     className="room-gallery mb-5"
@@ -115,62 +120,27 @@ const SingleRoom = () => {
                     <h3 className="section-subtitle mb-4">Room Gallery</h3>
                     <div className="gallery-grid">
                         <div className="gallery-main">
-                            <a
-                                href="assets/img/hotel/room-12.webp"
-                                className="glightbox"
-                            >
+                            <a href={galleryImages[0]} className="glightbox">
                                 <img
-                                    src="assets/img/hotel/room-12.webp"
-                                    alt="Suite Interior"
+                                    src={galleryImages[0]}
+                                    alt={`${room.name} main`}
                                     className="img-fluid"
                                 />
                             </a>
                         </div>
                         <div className="gallery-thumbnails">
-                            <a
-                                href="assets/img/hotel/room-8.webp"
-                                className="glightbox"
-                            >
-                                <img
-                                    src="assets/img/hotel/room-8.webp"
-                                    alt="Bedroom View"
-                                    className="img-fluid"
-                                />
-                            </a>
-                            <a
-                                href="assets/img/hotel/room-6.webp"
-                                className="glightbox"
-                            >
-                                <img
-                                    src="assets/img/hotel/room-6.webp"
-                                    alt="Living Area"
-                                    className="img-fluid"
-                                />
-                            </a>
-                            <a
-                                href="assets/img/hotel/room-18.webp"
-                                className="glightbox"
-                            >
-                                <img
-                                    src="assets/img/hotel/room-18.webp"
-                                    alt="Ocean View"
-                                    className="img-fluid"
-                                />
-                            </a>
-                            <a
-                                href="assets/img/hotel/dining-4.webp"
-                                className="glightbox"
-                            >
-                                <img
-                                    src="assets/img/hotel/dining-4.webp"
-                                    alt="Bathroom"
-                                    className="img-fluid"
-                                />
-                            </a>
+                            {galleryImages.slice(1).map((photo, idx) => (
+                                <a key={idx} href={photo} className="glightbox">
+                                    <img
+                                        src={photo}
+                                        alt={`${room.name} ${idx + 1}`}
+                                        className="img-fluid"
+                                    />
+                                </a>
+                            ))}
                         </div>
                     </div>
                 </div>
-
                 {/* <!-- Room Description --> */}
                 <div className="row mb-5">
                     <div

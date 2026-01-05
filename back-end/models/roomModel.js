@@ -31,6 +31,10 @@ const roomSchema = new mongoose.Schema(
             type: String,
             required: true,
         },
+        surfaceArea: {
+            type: String,
+            required: false,
+        },
         breackfast: {
             type: String,
             required: true,
