@@ -418,6 +418,23 @@ h6 {
     display: block;
   }
 }
+/* Login link spacing fix */
+.navmenu .login-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: flex-start !important;
+  padding: 0 !important;
+}
+
+.navmenu .login-link svg {
+  padding: 0 !important;
+  margin: 0;
+}
+
+.navmenu .login-link span {
+  margin: 0;
+}
+
 /*--------------------------------------------------------------
 # Global Footer
 --------------------------------------------------------------*/

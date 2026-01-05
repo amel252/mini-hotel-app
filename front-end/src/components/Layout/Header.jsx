@@ -298,8 +298,9 @@ const Grandoria = () => {
                                     <Link to="/contact">Contact</Link>
                                 </li>
                                 <li>
-                                    <Link to="/login">
-                                        <LuLogIn size={30} /> Sign in
+                                    <Link to="/login" className="login-link">
+                                        <LuLogIn size={22} />
+                                        <span>Signin</span>
                                     </Link>
                                 </li>
                             </ul>

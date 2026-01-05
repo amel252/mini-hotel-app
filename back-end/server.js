@@ -1,6 +1,8 @@
 import dotenv from "dotenv";
 dotenv.config();
+
 import express from "express";
+import cors from "cors";
 import mongoose from "mongoose";
 
 import "./config/passport.js";
@@ -21,6 +23,13 @@ app.use(passport.initialize());
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
+// Autoriser toutes les origines (localhost:5173 ici)
+app.use(
+    cors({
+        origin: "http://localhost:5173", // front-end
+        credentials: true, // si tu utilises cookies / auth
+    })
+);
 // connextion mongoDb
 mongoose
     .connect(process.env.MONGO_URI)

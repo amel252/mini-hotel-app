@@ -1,12 +1,12 @@
 // Main.js
 import React from "react";
-import Grandoria from "./Grandoria";
+import Header from "./Header";
 import Footer from "./Footer";
 
 const Layout = ({ children }) => {
     return (
         <>
-            <Grandoria />
+            <Header />
             <main>{children}</main>
             <Footer />
         </>

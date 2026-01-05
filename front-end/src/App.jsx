@@ -14,9 +14,12 @@ import CreateRoom from "./admin/rooms/CreateRoom";
 import EditRoom from "./admin/rooms/EditRoom";
 import AdminRooms from "./admin/rooms/AdminRooms";
 import Dashboard from "./admin/screen/RoomListScreen";
-//
+// stylisation
 import AOS from "aos";
 import "aos/dist/aos.css";
+//  route auth
+import Login from "./components/auth/Login";
+
 const App = () => {
     useEffect(() => {
         AOS.init({ duration: 1000, once: true });
@@ -31,6 +34,16 @@ const App = () => {
                         <Route index element={<Rooms />} />
                         <Route path=":id" element={<SingleRoom />} />{" "}
                     </Route>
+
+                    {/* route pages  */}
+                    <Route path="/about" element={<About />} />
+                    <Route path="/services" element={<Services />} />
+                    <Route path="/contact" element={<Contact />} />
+                    <Route path="/dashboard" element={<Dashboard />} />
+
+                    {/*  route authentification */}
+                    <Route path="/login" element={<Login />} />
+
                     {/* routes admin  */}
                     <Route path="/admin/rooms" element={<AdminRooms />} />
                     <Route
@@ -41,11 +54,6 @@ const App = () => {
                         path="/admin/rooms/:id/edit"
                         element={<EditRoom />}
                     />
-                    {/* route pages  */}
-                    <Route path="/about" element={<About />} />
-                    <Route path="/services" element={<Services />} />
-                    <Route path="/contact" element={<Contact />} />
-                    <Route path="/dashboard" element={<Dashboard />} />
                 </Routes>
             </Layout>
         </>
