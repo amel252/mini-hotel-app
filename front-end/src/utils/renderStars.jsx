@@ -1,5 +1,5 @@
 import React from "react";
-export const renderStars = (rating) => {
+const renderStars = (rating = 0) => {
     // arrondir le nombre
     const fullStars = Math.round(rating);
     return (

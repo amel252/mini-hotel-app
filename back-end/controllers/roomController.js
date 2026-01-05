@@ -58,15 +58,21 @@ export const createRoomReview = async (req, res) => {
         if (!room) {
             return res.status(404).json({ message: "Room not found" });
         }
+        // 🔥 Calcul correct de la moyenne
+        // nouvelleMoyenne = (ancienneMoyenne × nombreAvis + nouvelleNote) / (nombreAvis + 1)
+        room.rating =
+            (room.rating * room.numOfReviews + rating) /
+            (room.numOfReviews + 1);
 
-        // Calcul de la nouvelle moyenne
-        const totalRating = room.rating * room.numOfReviews + rating;
-
+        // 🔢 Incrémentation
         room.numOfReviews += 1;
-        room.rating = Number((totalRating / room.numOfReviews).toFixed(1));
+
+        // Arrondi propre (optionnel)
+        room.rating = Number(room.rating.toFixed(1));
+
         await room.save();
 
-        res.json({
+        res.status(200).json({
             rating: room.rating,
             numOfReviews: room.numOfReviews,
         });

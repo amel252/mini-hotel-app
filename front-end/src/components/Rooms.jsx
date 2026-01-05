@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
-// import CustomPagination from "./Layout/CustomPagination";
+import renderStars from "../utils/renderStars";
 import { Pagination } from "antd";
 
 const Rooms = () => {
@@ -145,19 +145,10 @@ const Rooms = () => {
                                             <div className="room-header">
                                                 <h3>{room.name}</h3>
                                                 <div className="room-rating">
-                                                    {/* Exemple de 5 étoiles */}
-                                                    {Array.from({
-                                                        length: 5,
-                                                    }).map((_, i) => (
-                                                        <i
-                                                            key={i}
-                                                            className={`bi bi-star${
-                                                                i < 5
-                                                                    ? "-fill"
-                                                                    : ""
-                                                            }`}
-                                                        ></i>
-                                                    ))}
+                                                    {renderStars(room.rating)}
+                                                    <span className="ms-2 text-muted">
+                                                        ({room.numOfReviews})
+                                                    </span>
                                                 </div>
                                             </div>
                                             <p className="room-description">
