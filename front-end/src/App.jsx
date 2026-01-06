@@ -10,9 +10,15 @@ import RoomsPage from "./pages/RoomsPage";
 import Rooms from "./components/Rooms";
 import SingleRoom from "./components/SingleRoom";
 // admin
-import CreateRoom from "./admin/rooms/CreateRoom";
-import EditRoom from "./admin/rooms/EditRoom";
-import AdminRooms from "./admin/rooms/AdminRooms";
+import AdminDashboard from "./admin/AdminDashboard";
+import UserListScreen from "./admin/screen/userListScreen";
+import RoomListScreen from "./admin/rooms/AdminRooms";
+import BookingListScreen from "./admin/screen/BookingListScreen";
+import AdminRoute from "./components/AdminRoute";
+//
+// import CreateRoom from "./admin/rooms/CreateRoom";
+// import EditRoom from "./admin/rooms/EditRoom";
+// import AdminRooms from "./admin/rooms/AdminRooms";
 // stylisation
 import AOS from "aos";
 import "aos/dist/aos.css";
@@ -39,14 +45,29 @@ const App = () => {
                     <Route path="/about" element={<About />} />
                     <Route path="/services" element={<Services />} />
                     <Route path="/contact" element={<Contact />} />
-                    
 
                     {/*  route authentification */}
                     <Route path="/login" element={<Login />} />
                     <Route path="/register" element={<Register />} />
 
-                    {/* routes admin  */}
-                    <Route path="/admin/rooms" element={<AdminRooms />} />
+                    {/* Route admin parent */}
+                    <Route
+                        path="/admin"
+                        element={
+                            <AdminRoute>
+                                <AdminDashboard />
+                            </AdminRoute>
+                        }
+                    >
+                        {/* les sous-routes */}
+                        <Route path="users" element={<UserListScreen />} />
+                        <Route path="rooms" element={<RoomListScreen />} />
+                        <Route
+                            path="bookings"
+                            element={<BookingListScreen />}
+                        />
+                    </Route>
+                    {/* <Route path="/admin/rooms" element={<AdminRooms />} />
                     <Route
                         path="/admin/rooms/create"
                         element={<CreateRoom />}
@@ -54,7 +75,7 @@ const App = () => {
                     <Route
                         path="/admin/rooms/:id/edit"
                         element={<EditRoom />}
-                    />
+                    /> */}
                 </Routes>
             </Layout>
         </>

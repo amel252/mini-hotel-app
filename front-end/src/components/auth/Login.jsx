@@ -16,17 +16,21 @@ const Login = () => {
 
     // Redirection après login réussi
     useEffect(() => {
-        if (isSuccess) {
+        if (isSuccess && data) {
             //  connexion reussie
+            // stocker token et user
+            localStorage.setItem("token", data.token);
+            localStorage.setItem("user", JSON.stringify(data.user));
             navigate("/"); // ← redirige vers Home
         }
-    }, [isSuccess, navigate]);
+    }, [isSuccess, data, navigate]);
     const submitHandler = (e) => {
         e.preventDefault();
         //  le body de la requette
         const loginData = { email, password };
         login(loginData);
     };
+    // Après le login : localStorage.getItem("user") → contient l’utilisateur avec isAdmin , localStorage.getItem("token") → contient le JWT
     return (
         <>
             <div className="container min-vh-100 d-flex justify-content-center align-items-center">

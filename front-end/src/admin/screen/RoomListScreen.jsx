@@ -4,16 +4,20 @@ import { FaTrash, FaPlus, FaEdit } from "react-icons/fa";
 import {
     useGetRoomsQuery,
     useDeleteRoomMutation,
-    useCreateRoomMutation,
+    useAddRoomMutation,
 } from "../../redux/roomApiSlice";
 import { Table, Button, Space, Typography, Spin, Alert } from "antd";
 const { Title } = Typography;
 import { Link } from "react-router-dom";
 
 function RoomListScreen() {
+    const user = JSON.parse(localStorage.getItem("user"));
+    if (!user?.isAdmin) {
+        return <p>Accès interdit : vous n'êtes pas admin</p>;
+    }
     const { data: rooms, isLoading, error, refetch } = useGetRoomsQuery();
     const [deleteRoom, { isLoading: loadingDelete }] = useDeleteRoomMutation();
-    const [createRoom, { isLoading: loadingCreate }] = useCreateRoomMutation();
+    const [addRoom, { isLoading: loadingCreate }] = useAddRoomMutation();
 
     const deleteHandler = async (id) => {
         if (window.confirm("Are you sure you want to delete this room")) {
@@ -68,22 +72,23 @@ function RoomListScreen() {
             key: "actions",
             render: (_, room) => (
                 <Space size="middle">
-                    <Link to={`/admin/rooms/${room._id}/edit`}>
-                        <FaEdit />
-                    </Link>
-                    <Button
-                        danger
-                        type="text"
-                        icon={<FaTrash />}
-                        onClick={() => deleteHandler(room._id)}
-                    />
+                    {user?.isAdmin && (
+                        <>
+                            <Link to={`/admin/rooms/${room._id}/edit`}>
+                                <FaEdit />
+                            </Link>
+                            <Button
+                                danger
+                                type="text"
+                                icon={<FaTrash />}
+                                onClick={() => deleteHandler(room._id)}
+                            />
+                        </>
+                    )}
                 </Space>
             ),
         },
     ];
-
-    // if (isLoading) return <p>Loading the room ...</p>;
-    // if (error) return <p>Error : {error?.data?.message || " server error"}</p>;
 
     return (
         <div className="container-fluid">
