@@ -7,19 +7,19 @@ export const authApiSlice = createApi({
         baseUrl: "http://localhost:3200/api/auth",
     }),
     endpoints: (builder) => ({
-        login: builder.mutation({
+        register: builder.mutation({
             query(body) {
                 return {
-                    url: "/login",
+                    url: "/register",
                     method: "POST",
                     body,
                 };
             },
         }),
-        register: builder.mutation({
+        login: builder.mutation({
             query(body) {
                 return {
-                    url: "/register",
+                    url: "/login",
                     method: "POST",
                     body,
                 };

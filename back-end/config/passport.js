@@ -2,13 +2,12 @@
 import passport from "passport";
 import { Strategy as LocalStrategy } from "passport-local";
 import UserModel from "../models/userModel.js";
-// import JWT from "passport-jwt";
+
 import { Strategy as JwtStrategy, ExtractJwt } from "passport-jwt";
-// const { Strategy: JWTstrategy, ExtractJwt } = JWT;
 
 //  function d'inscription user
 passport.use(
-    "signup",
+    "register",
     new LocalStrategy(
         {
             usernameField: "email", // on utilisera email comme identifiant

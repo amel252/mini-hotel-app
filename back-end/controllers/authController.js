@@ -5,15 +5,18 @@ import passport from "passport";
 import jwt from "jsonwebtoken";
 
 // Signup
-export const signup = (req, res, next) => {
-    passport.authenticate("signup", { session: false }, (err, user, info) => {
-        if (err) return next(err);
+export const register = (req, res, next) => {
+    passport.authenticate("register", { session: false }, (err, user, info) => {
+        if (err) {
+            console.error("Error in register:", err);
+            return res.status(500).json({ message: "Error serveur" });
+        }
         if (!user)
             return res.status(400).json({
-                message: info?.message || "Erreur lors de l'inscription",
+                message: info?.message || "Error registration",
             });
         return res.status(201).json({
-            message: "Utilisateur créé avec succès",
+            message: "User created successufly",
             user: { id: user._id, email: user.email, username: user.username },
         });
     })(req, res, next);

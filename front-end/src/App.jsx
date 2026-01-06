@@ -19,6 +19,7 @@ import AOS from "aos";
 import "aos/dist/aos.css";
 //  route auth
 import Login from "./components/auth/Login";
+import Register from "./components/auth/Register";
 
 const App = () => {
     useEffect(() => {
@@ -43,6 +44,7 @@ const App = () => {
 
                     {/*  route authentification */}
                     <Route path="/login" element={<Login />} />
+                    <Route path="/register" element={<Register />} />
 
                     {/* routes admin  */}
                     <Route path="/admin/rooms" element={<AdminRooms />} />
