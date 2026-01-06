@@ -20,7 +20,7 @@ import imagesLoaded from "imagesloaded";
 // PureCounter (Compteurs animés)
 import PureCounter from "@srexi/purecounterjs";
 
-const Grandoria = () => {
+const Header = () => {
     const [menuOpen, setMenuOpen] = useState(false);
     const [dropdownOpen, setDropdownOpen] = useState(null);
     const [isMobile, setIsMobile] = useState(window.innerWidth < 1200);
@@ -318,4 +318,4 @@ const Grandoria = () => {
     );
 };
 
-export default Grandoria;
+export default Header;

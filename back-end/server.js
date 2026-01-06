@@ -10,7 +10,7 @@ import passport from "passport";
 
 import authRoutes from "./routes/authRoutes.js";
 import roomRoutes from "./routes/roomRoutes.js";
-import privateRoutes from "./routes/privateRoutes.js";
+import adminRoutes from "./routes/adminRoutes.js";
 
 const PORT = process.env.PORT || 3200;
 
@@ -38,7 +38,7 @@ mongoose
 app.use(
     "/admin",
     passport.authenticate("jwt", { session: false }),
-    privateRoutes
+    adminRoutes
 );
 app.use("/api/auth", authRoutes);
 app.use("/api/rooms", roomRoutes);

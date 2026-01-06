@@ -13,7 +13,6 @@ import SingleRoom from "./components/SingleRoom";
 import CreateRoom from "./admin/rooms/CreateRoom";
 import EditRoom from "./admin/rooms/EditRoom";
 import AdminRooms from "./admin/rooms/AdminRooms";
-import Dashboard from "./admin/screen/RoomListScreen";
 // stylisation
 import AOS from "aos";
 import "aos/dist/aos.css";
@@ -40,7 +39,7 @@ const App = () => {
                     <Route path="/about" element={<About />} />
                     <Route path="/services" element={<Services />} />
                     <Route path="/contact" element={<Contact />} />
-                    <Route path="/dashboard" element={<Dashboard />} />
+                    
 
                     {/*  route authentification */}
                     <Route path="/login" element={<Login />} />

@@ -15,7 +15,7 @@ export const roomApiSlice = createApi({
         }),
 
         // Créer une chambre
-        createRoom: builder.mutation({
+        addRoom: builder.mutation({
             query: (room) => ({
                 url: "/",
                 method: "POST",
@@ -42,7 +42,7 @@ export const roomApiSlice = createApi({
 
 export const {
     useGetRoomsQuery,
-    useCreateRoomMutation,
+    useAddRoomMutation,
     useDeleteRoomMutation,
     useGetRoomByIdQuery,
 } = roomApiSlice;

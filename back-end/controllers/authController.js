@@ -42,7 +42,11 @@ export const login = (req, res, next) => {
             if (error) return next(error);
             // Générer le JWT
             const token = jwt.sign(
-                { id: user._id, email: user.email }, // payload
+                {
+                    id: user._id,
+                    email: user.email,
+                    isAdmin: user.isAdmin,
+                }, // payload
                 "amel123", // secret
                 { expiresIn: "1h" } // expiration
             );
@@ -53,6 +57,7 @@ export const login = (req, res, next) => {
                     id: user._id,
                     email: user.email,
                     username: user.username,
+                    isAdmin: user.isAdmin,
                 },
             });
         });

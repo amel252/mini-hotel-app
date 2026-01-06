@@ -2,14 +2,18 @@
 
 import express from "express";
 import passport from "passport";
+import middlewareAdmin from "../middleware/middlewareAdmin.js";
+
+
 const router = express.Router();
 
 router.get(
-    "/user",
-    passport.authenticate("jwt", { session: false }),
+    "/",
+    passport.authenticate("jwt", { session: false }), // vérifie le token
+    middlewareAdmin, // verifie admin
     (req, res) => {
         res.json({
-            message: "Accès autorisé",
+            message: "Access admin autorised",
             user: req.user,
         });
     }
