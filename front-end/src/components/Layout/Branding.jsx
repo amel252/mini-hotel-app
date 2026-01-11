@@ -1,48 +1,66 @@
-// ce fichier gère le logo, la nav et le bloc utilisateur.
-import React, { useState } from "react";
+import React from "react";
 import { Link } from "react-router-dom";
 import UserMenu from "./UserMenu";
 
 const Branding = ({ menuOpen, toggleMenu }) => {
+    const handleMobileToggle = () => {
+        toggleMenu(); // state React
+        document.body.classList.toggle("mobile-nav-active"); // classe CSS
+    };
+    const handleCloseMenu = () => {
+        document.body.classList.remove("mobile-nav-active");
+        toggleMenu(false);
+    };
     return (
         <div className="branding d-flex align-items-center">
-            <div className="container d-flex justify-content-between align-items-center">
+            <div className="container d-flex justify-content-between align-items-center position-relative">
                 <Link to="/" className="logo d-flex align-items-center">
                     <h1 className="sitename">Grandoria</h1>
                 </Link>
 
                 <button
-                    className="navbar-toggler d-xl-none"
+                    className="navbar-toggler d-xl-none mobile-nav-toggle"
                     type="button"
-                    onClick={toggleMenu}
+                    onClick={handleMobileToggle}
                 >
-                    <span className="navbar-toggler-icon"></span>
+                    ☰
                 </button>
 
                 <nav className={`navmenu ${menuOpen ? "show" : ""}`}>
                     <ul>
                         <li>
-                            <Link to="/">Home</Link>
+                            <Link to="/" onClick={handleCloseMenu}>
+                                Home
+                            </Link>
                         </li>
                         <li>
-                            <Link to="/about">About</Link>
+                            <Link to="/about" onClick={handleCloseMenu}>
+                                About
+                            </Link>
                         </li>
                         <li>
-                            <Link to="/rooms">Rooms</Link>
+                            <Link to="/rooms" onClick={handleCloseMenu}>
+                                Rooms
+                            </Link>
                         </li>
                         <li>
-                            <Link to="/amenities">Amenities</Link>
+                            <Link to="/amenities" onClick={handleCloseMenu}>
+                                Amenities
+                            </Link>
                         </li>
                         <li>
-                            <Link to="/location">Location</Link>
+                            <Link to="/location" onClick={handleCloseMenu}>
+                                Location
+                            </Link>
                         </li>
-                        {/* Dropdown Pages à part si besoin */}
                         <li>
-                            <Link to="/contact">Contact</Link>
+                            <Link to="/contact" onClick={handleCloseMenu}>
+                                Contact
+                            </Link>
                         </li>
 
                         {/* Bloc utilisateur */}
-                        <UserMenu />
+                        <UserMenu onItemClick={handleCloseMenu} />
                     </ul>
                 </nav>
             </div>

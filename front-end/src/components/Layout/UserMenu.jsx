@@ -1,9 +1,8 @@
-//  gére l'affichage utilisateur et logout
 import React from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { FaUser, FaSignOutAlt } from "react-icons/fa";
 
-const UserMenu = () => {
+const UserMenu = ({ onItemClick }) => {
     const user = JSON.parse(localStorage.getItem("user"));
     const navigate = useNavigate();
 
@@ -13,33 +12,81 @@ const UserMenu = () => {
         navigate("/");
     };
 
-    return (
-        <li className="d-flex align-items-center">
-            {user ? (
-                <>
+    // return (
+    // <li className="d-flex align-items-center">
+    //     {user ? (
+    //         <>
+    //             <li>
+    //                 <Link
+    //                     to="/profile"
+    //                     className="user-link"
+    //                     onClick={onItemClick}
+    //                 >
+    //                     <FaUser size={22} />
+    //                     <span>{user.username || user.name}</span>
+    //                 </Link>
+    //             </li>
+    //             <li>
+    //                 <button
+    //                     className="logout-btn"
+    //                     onClick={() => {
+    //                         handleLogout();
+    //                         onItemClick();
+    //                     }}
+    //                 >
+    //                     <FaSignOutAlt size={24} />
+    //                 </button>
+    //             </li>
+    //         </>
+    //     ) : (
+    //         <li>
+    //             <Link
+    //                 to="/login"
+    //                 className="user-link"
+    //                 onClick={onItemClick}
+    //             >
+    //                 <FaUser size={24} />
+    //                 <span>Signin</span>
+    //             </Link>
+    //         </li>
+    //     )}
+    // </li>
+    if (user) {
+        return (
+            <>
+                <li>
                     <Link
                         to="/profile"
-                        className="d-flex align-items-center gap-1 text-white"
+                        className="user-link"
+                        onClick={onItemClick}
                     >
-                        <FaUser size={22} />
+                        <FaUser size={18} />
                         <span>{user.username || user.name}</span>
                     </Link>
+                </li>
+
+                <li>
                     <button
-                        onClick={handleLogout}
-                        className="btn btn-link text-white p-0 ms-2 d-flex align-items-center"
+                        className="logout-btn"
+                        onClick={() => {
+                            handleLogout();
+                            onItemClick();
+                        }}
                     >
-                        <FaSignOutAlt size={24} />
+                        <FaSignOutAlt size={18} />
+                        <span>Logout</span>
                     </button>
-                </>
-            ) : (
-                <Link
-                    to="/login"
-                    className="d-flex align-items-center gap-1 text-white"
-                >
-                    <FaUser size={24} />
-                    <span>Signin</span>
-                </Link>
-            )}
+                </li>
+            </>
+        );
+    }
+
+    return (
+        <li>
+            <Link to="/login" className="user-link" onClick={onItemClick}>
+                <FaUser size={22} />
+                <span>Signin</span>
+            </Link>
         </li>
     );
 };

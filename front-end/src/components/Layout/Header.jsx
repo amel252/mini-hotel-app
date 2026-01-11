@@ -411,7 +411,7 @@ import Branding from "./Branding";
 const Header = () => {
     const [menuOpen, setMenuOpen] = useState(false);
 
-    const toggleMenu = () => setMenuOpen(!menuOpen);
+    const toggleMenu = () => setMenuOpen((prev) => !prev);
 
     return (
         <>
@@ -419,9 +419,9 @@ const Header = () => {
                 <Topbar />
                 <Branding menuOpen={menuOpen} toggleMenu={toggleMenu} />
             </header>
-            <a href="#top" className="scroll-top">
+            {/* <a href="#top" className="scroll-top">
                 <i className="bi bi-arrow-up-short"></i>
-            </a>
+            </a> */}
             {/* <div id="preloader"></div> */}
         </>
     );
