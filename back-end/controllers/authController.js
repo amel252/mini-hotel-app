@@ -4,7 +4,7 @@
 import passport from "passport";
 import jwt from "jsonwebtoken";
 
-// Signup
+// Register
 export const register = (req, res, next) => {
     passport.authenticate("register", { session: false }, (err, user, info) => {
         if (err) {
@@ -26,12 +26,6 @@ export const register = (req, res, next) => {
 export const login = (req, res, next) => {
     passport.authenticate("login", { session: false }, (err, user, info) => {
         if (err) return next(err);
-
-        // Debug : log de l’utilisateur trouvé et du body
-        // console.log("Body reçu :", req.body);
-        // console.log("Utilisateur trouvé :", user);
-        // console.log("req.body.email :", req.body.email);
-        // console.log("req.body.password :", req.body.password);
 
         if (!user)
             return res.status(401).json({
@@ -60,6 +54,19 @@ export const login = (req, res, next) => {
                     isAdmin: user.isAdmin,
                 },
             });
+        });
+    })(req, res, next);
+};
+// Logout route sécurisée
+export const logout = (req, res, next) => {
+    passport.authenticate("jwt", { session: false }, (err, user, info) => {
+        if (err) return next(err);
+        if (!user) return res.status(401).json({ message: "Token invalid" });
+
+        // Ici, côté serveur, on ne fait rien avec le token
+        // On dit juste au client qu'il peut supprimer le token
+        return res.json({
+            message: "logout successufuly , delete token client side",
         });
     })(req, res, next);
 };
