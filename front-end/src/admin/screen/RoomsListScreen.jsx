@@ -10,7 +10,7 @@ import { Table, Button, Space, Typography, Spin, Alert } from "antd";
 const { Title } = Typography;
 import { Link } from "react-router-dom";
 
-function RoomListScreen() {
+function RoomsListScreen() {
     const user = JSON.parse(localStorage.getItem("user"));
     if (!user?.isAdmin) {
         return <p>Accès interdit : vous n'êtes pas admin</p>;
@@ -79,7 +79,7 @@ function RoomListScreen() {
                             </Link>
                             <Button
                                 danger
-                                type="text"
+                                type="link"
                                 icon={<FaTrash />}
                                 onClick={() => deleteHandler(room._id)}
                             />
@@ -129,4 +129,4 @@ function RoomListScreen() {
     );
 }
 
-export default RoomListScreen;
+export default RoomsListScreen;

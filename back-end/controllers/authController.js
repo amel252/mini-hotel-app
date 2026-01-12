@@ -61,12 +61,17 @@ export const login = (req, res, next) => {
 export const logout = (req, res, next) => {
     passport.authenticate("jwt", { session: false }, (err, user, info) => {
         if (err) return next(err);
+        // Si le token est absent ou invalide
         if (!user) return res.status(401).json({ message: "Token invalid" });
 
         // Ici, côté serveur, on ne fait rien avec le token
         // On dit juste au client qu'il peut supprimer le token
         return res.json({
             message: "logout successufuly , delete token client side",
+            user: {
+                id: user.id,
+                username: user.username,
+            },
         });
     })(req, res, next);
 };

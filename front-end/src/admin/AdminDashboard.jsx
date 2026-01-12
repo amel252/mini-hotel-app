@@ -3,40 +3,48 @@ import { Link, Outlet, useNavigate } from "react-router-dom";
 
 const AdminDashboard = () => {
     const navigate = useNavigate();
+    const user = JSON.parse(localStorage.getItem("user"));
+    if (!user?.isAdmin) return <p>Access not allowed</p>;
+
     //  fonction de déconnexion
     const handleLogout = () => {
         localStorage.removeItem("token");
         localStorage.removeItem("user");
         navigate("/login");
     };
-    const user = JSON.parse(localStorage.getItem("user"));
-
-    if (!user?.isAdmin) return <p>Accès interdit</p>;
 
     return (
-        <div className="admin-dashboard">
-            <h2>Admin Dashboard</h2>
-            <button onClick={handleLogout}>Logout</button>
-            <nav>
-                <ul>
+        <div className="admin-dashboard container py-4">
+            <div className="d-flex justify-content-between align-items-center mb-4">
+                <h2>Admin Dashboard</h2>
+                <button className="btn btn-danger" onClick={handleLogout}>
+                    Logout
+                </button>
+            </div>
+            <nav className="mb-4">
+                <ul className="list-unstyled d-flex gap-2">
                     <li>
-                        <Link to="users">Users</Link>
+                        <Link className="btn btn-primary" to="users">
+                            Users
+                        </Link>
                     </li>
                     <li>
-                        <Link to="rooms">Rooms</Link>
+                        <Link className="btn btn-primary" to="rooms">
+                            Rooms
+                        </Link>
                     </li>
                     <li>
-                        <Link to="bookings">Bookings</Link>
+                        <Link className="btn btn-primary" to="bookings">
+                            Bookings
+                        </Link>
                     </li>
                 </ul>
             </nav>
 
-            {/* Outlet pour afficher la sous-page */}
-            <div className="admin-content">
+            <main>
                 <Outlet />
-            </div>
+            </main>
         </div>
     );
 };
-
 export default AdminDashboard;

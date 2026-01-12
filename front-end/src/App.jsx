@@ -11,9 +11,9 @@ import Rooms from "./components/Rooms";
 import SingleRoom from "./components/SingleRoom";
 // admin
 import AdminDashboard from "./admin/AdminDashboard";
-import UserListScreen from "./admin/screen/userListScreen";
-import RoomListScreen from "./admin/rooms/AdminRooms";
-import BookingListScreen from "./admin/screen/BookingListScreen";
+import UserListScreen from "./admin/screen/UsersListScreen";
+import RoomListScreen from "./admin/screen/RoomsListScreen";
+import BookingListScreen from "./admin/screen/BookingsListScreen";
 import AdminRoute from "./components/AdminRoute";
 //
 // import CreateRoom from "./admin/rooms/CreateRoom";
