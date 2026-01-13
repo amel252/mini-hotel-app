@@ -41,6 +41,8 @@ app.use("/api/auth", authRoutes);
 // CRUD rooms (public / admin selon besoin)
 app.use("/api/rooms", roomRoutes);
 
+//// GET all users
+
 // Routes admin sécurisées
 // Toutes les routes de adminRoutes passent par passport JWT et middleware admin
 app.use(

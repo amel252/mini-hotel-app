@@ -1,8 +1,9 @@
 // Appelle la stratégie Passport pour vérifier l’utilisateur. Gère la réponse HTTP (200 OK ou 401). Peut ajouter du JSON, des messages, des logs ou d’autres actions. 👉 C’est là que tu décides ce que l’API renvoie au client.
 // import passport from "passport";
+// authController → s’occupe de l’authentification: login/logout, register,refresh token, reset PWD, vérification d’email, génération et validation des JWT / sessions
 
 import passport from "passport";
-import jwt from "jsonwebtoken";
+import generateToken from "../utils/generateToken";
 
 // Register
 export const register = (req, res, next) => {
@@ -15,6 +16,8 @@ export const register = (req, res, next) => {
             return res.status(400).json({
                 message: info?.message || "Error registration",
             });
+
+        // Soit tu renvoies juste le user :
         return res.status(201).json({
             message: "User created successufly",
             user: { id: user._id, email: user.email, username: user.username },
@@ -29,31 +32,13 @@ export const login = (req, res, next) => {
 
         if (!user)
             return res.status(401).json({
-                message: info?.message || "Email ou mot de passe incorrect",
+                message: info?.message || "Email or password incorrect",
             });
 
         req.login(user, { session: false }, (error) => {
             if (error) return next(error);
-            // Générer le JWT
-            const token = jwt.sign(
-                {
-                    id: user._id,
-                    email: user.email,
-                    isAdmin: user.isAdmin,
-                }, // payload
-                "amel123", // secret
-                { expiresIn: "1h" } // expiration
-            );
-            return res.json({
-                message: "Connexion réussie",
-                token, // <-- renvoyer le token au client
-                user: {
-                    id: user._id,
-                    email: user.email,
-                    username: user.username,
-                    isAdmin: user.isAdmin,
-                },
-            });
+            // Toute la logique JWT est déléguée ici
+            generateToken(res, user);
         });
     })(req, res, next);
 };
@@ -75,3 +60,6 @@ export const logout = (req, res, next) => {
         });
     })(req, res, next);
 };
+//  fonction forget password
+// fontion reset password
+// fonction user profile => /api/user/me

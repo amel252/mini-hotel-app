@@ -33,11 +33,6 @@ const AdminDashboard = () => {
                             Rooms
                         </Link>
                     </li>
-                    <li>
-                        <Link className="btn btn-primary" to="bookings">
-                            Bookings
-                        </Link>
-                    </li>
                 </ul>
             </nav>
 
