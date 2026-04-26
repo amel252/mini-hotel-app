@@ -24,3 +24,4 @@ const generateToken = (res, user) => {
         user,
     });
 };
+export default generateToken;

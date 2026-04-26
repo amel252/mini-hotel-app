@@ -30,3 +30,6 @@ router.get("/users", getUsers);
 router.get("/rooms", getRooms);
 
 export default router;
+
+// // GET /api/admin/users
+// DELETE /api/admin/users/:id

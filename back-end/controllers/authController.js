@@ -3,7 +3,7 @@
 // authController → s’occupe de l’authentification: login/logout, register,refresh token, reset PWD, vérification d’email, génération et validation des JWT / sessions
 
 import passport from "passport";
-import generateToken from "../utils/generateToken";
+import generateToken from "../utils/generateToken.js";
 
 // Register
 export const register = (req, res, next) => {

@@ -14,6 +14,8 @@ import adminRoutes from "./routes/adminRoutes.js";
 
 const PORT = process.env.PORT || 3200;
 
+console.log("JWT_SECRET:", process.env.JWT_SECRET);
+
 //instancié express
 const app = express();
 // initialisé passport
